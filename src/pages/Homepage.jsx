@@ -1,13 +1,11 @@
 import { useQuery } from 'react-query';
 
 // import PageHead from '~/components/Head'; use react-helmet
-import { themes } from '../styles/themes';
 import { fetchData } from '../utils/fetchData';
 import { APIKey, baseUrl } from '../utils/config';
 import FeaturedMovie from '../components/Featured/index';
-import { GiConsoleController } from 'react-icons/gi';
-// import DiscoverGenres from '~/components/DiscoverGenres';
-// import DiscoverCategories from '~/components/DiscoverCategories';
+import DiscoverGenres from '../components/Discover/Genres/index';
+import DiscoverCategories from '../components/Discover/Categories/index';
 
 const Homepage = () => {
   const {
@@ -46,9 +44,9 @@ const Homepage = () => {
     <>
       <main>
         <FeaturedMovie movie={featured} />
-        {/* <DiscoverCategories category="Now Playing" data={nowPlaying.results} /> */}
-        {/* <DiscoverCategories category="Trending" data={trending.results} /> */}
-        {/* <DiscoverGenres /> */}
+        <DiscoverCategories category="Now Playing" data={nowPlaying.results} />
+        <DiscoverCategories category="Trending" data={trending.results} />
+        <DiscoverGenres />
       </main>
     </>
   );
