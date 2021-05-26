@@ -1,10 +1,11 @@
 import { useQuery } from 'react-query';
-import MainLoader from 'components/Loader';
 
+import MainLoader from 'components/Loader';
+import MetaData from 'components/MetaData';
 import { fetchData } from 'utils/fetchData';
 import { APIKey, baseUrl } from 'utils/config';
 import FeaturedMovie from 'components/Featured/index';
-import DiscoverGenres from 'components/Discover/Genres/index';
+import BrowseGenres from 'components/Discover/Genres/index';
 import DiscoverCategories from 'components/Discover/Categories/index';
 
 const Homepage = () => {
@@ -41,11 +42,12 @@ const Homepage = () => {
 
   return (
     <>
+      <MetaData title="Home | MovieHouse" />
       <main>
         <FeaturedMovie movie={featured} />
         <DiscoverCategories category="Now Playing" data={nowPlaying.results} />
         <DiscoverCategories category="Trending" data={trending.results} />
-        <DiscoverGenres />
+        <BrowseGenres />
       </main>
     </>
   );
