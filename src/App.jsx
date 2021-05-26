@@ -1,8 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
-import Homepage from './pages/Homepage';
-import { themes } from './styles/themes';
+import Search from 'pages/Search';
+import Bookings from 'pages/Bookings';
+import Homepage from 'pages/Homepage';
+import Biography from 'pages/Biography';
+import Favorites from 'pages/Favorites';
+import { themes } from 'styles/themes';
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -23,7 +27,11 @@ const App = () => {
     <>
       <GlobalStyles />
       <Routes>
-        <Route to="/" element={<Homepage />} />
+        <Route path="/" exact element={<Homepage />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/my-bookings" element={<Bookings />} />
+        <Route path="/biography/:personId" element={<Biography />} />
+        <Route path="/search" exact element={<Search />} />
       </Routes>
     </>
   );
