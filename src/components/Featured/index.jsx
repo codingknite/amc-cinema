@@ -5,9 +5,9 @@ import { BsStarFill } from 'react-icons/bs';
 import { SiGooglecalendar } from 'react-icons/si';
 
 import * as Styles from './styles';
-import { themes } from '../../styles/themes';
-import { genres } from '../../data/categories';
-import { posterUrl } from '../../utils/config';
+import { themes } from 'styles/themes';
+import { genres } from 'data/categories';
+import { posterUrl } from 'utils/config';
 
 // import { LinkButton } from '~/components/common/Button';
 

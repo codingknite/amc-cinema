@@ -6,13 +6,13 @@ import 'slick-carousel/slick/slick.css';
 import { scroller, Element } from 'react-scroll';
 
 import * as Styles from './styles';
-import MovieCards from '../../MovieCards/index';
-import * as config from '../../../utils/config';
-import generateSlug from '../../../utils/generateSlug';
-import { genres } from '../../../data/categories';
-import { fetchData } from '../../../utils/fetchData';
-import { useFavorite } from '../../../context/useFavorites';
-import { Header, StyledLink } from '../../Discover/Categories/styles';
+import MovieCards from 'components/MovieCards/index';
+import * as config from 'utils/config';
+import generateSlug from 'utils/generateSlug';
+import { genres } from 'data/categories';
+import { fetchData } from 'utils/fetchData';
+import { useFavorite } from 'context/useFavorites';
+import { Header, StyledLink } from 'components/Discover/Categories/styles';
 
 export default function DiscoverGenres() {
   const { favorites, dispatchFavorites } = useFavorite();

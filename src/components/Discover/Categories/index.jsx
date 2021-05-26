@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import * as Styles from './styles';
-import generateSlug from '../../../utils/generateSlug';
-import MovieCards from '../../MovieCards/index';
-import { useFavorite } from '../../../context/useFavorites';
+import generateSlug from 'utils/generateSlug';
+import MovieCards from 'components/MovieCards/index';
+import { useFavorite } from 'context/useFavorites';
 
 const DiscoverCategories = ({ category, data, loading }) => {
   const { favorites, dispatchFavorites } = useFavorite();

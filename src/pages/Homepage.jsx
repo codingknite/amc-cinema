@@ -1,11 +1,11 @@
 import { useQuery } from 'react-query';
 
 // import PageHead from '~/components/Head'; use react-helmet
-import { fetchData } from '../utils/fetchData';
-import { APIKey, baseUrl } from '../utils/config';
-import FeaturedMovie from '../components/Featured/index';
-import DiscoverGenres from '../components/Discover/Genres/index';
-import DiscoverCategories from '../components/Discover/Categories/index';
+import { fetchData } from 'utils/fetchData';
+import { APIKey, baseUrl } from 'utils/config';
+import FeaturedMovie from 'components/Featured/index';
+import DiscoverGenres from 'components/Discover/Genres/index';
+import DiscoverCategories from 'components/Discover/Categories/index';
 
 const Homepage = () => {
   const {
