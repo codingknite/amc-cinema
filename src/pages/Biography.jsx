@@ -11,9 +11,9 @@ import { useFavorite } from 'context/useFavorites';
 import { Header } from 'components/Discover/Categories/styles';
 import { APIKey, baseUrl, imdbUrl, posterUrl } from 'utils/config';
 
-export default function Biography() {
+const Biography = () => {
   const { personId } = useParams();
-  const { favorites, dispatchFavories } = useFavorite();
+  const { favorites, dispatchFavorites } = useFavorite();
   const [pageState, dispatch] = useReducer(paginateReducer, 1);
 
   const {
@@ -87,7 +87,7 @@ export default function Biography() {
           <MovieCards
             data={featuredMovies}
             favorites={favorites}
-            dispatchFavorites={dispatchFavories}
+            dispatchFavorites={dispatchFavorites}
           />
         )}
 
@@ -100,4 +100,6 @@ export default function Biography() {
       </section>
     </>
   );
-}
+};
+
+export default Biography;
