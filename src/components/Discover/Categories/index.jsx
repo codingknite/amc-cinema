@@ -10,9 +10,6 @@ const DiscoverCategories = ({ category, data, loading }) => {
   const { favorites, dispatchFavorites } = useFavorite();
   const displayData = data.slice(0, 12);
 
-  console.log(displayData);
-  console.log(favorites);
-
   return (
     <>
       <Styles.Header>{category}</Styles.Header>
