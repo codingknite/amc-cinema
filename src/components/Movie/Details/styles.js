@@ -159,6 +159,18 @@ export const Links = styled.div`
     margin-top: 1rem;
     padding: 1rem 1rem 0rem 1rem;
     width: 100%;
+
+    a {
+        width: ${(props) => props.width ? props.width : '9rem'};
+        padding: 0.8rem;
+        margin-right: 1rem;
+        border-radius: 2rem;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        color: ${themes.colors.white};
+        background-color: ${themes.colors.heartRed};
+    }
     
     @media (max-width: ${themes.breakpoints.sm}) {
         flex-direction: column;

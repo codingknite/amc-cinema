@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { themes } from '../../styles/themes';
+import { themes } from 'styles/themes';
 
 export const CardsWrapper = styled.section`
     display: grid;
@@ -32,6 +32,7 @@ export const MoviePoster = styled.img`
     width: 100%;
     height: 23.75rem;
     border-radius: 0.8rem;
+    color: ${themes.colors.white};
     background: ${(props) => props.imageLoaded ? 'none' : 'linear-gradient(-45deg, black, #6c757d, black, #6c757d)'};
     animation: gradient 15s ease infinite;
 
@@ -52,6 +53,7 @@ export const Title = styled.p`
     font-size: ${themes.fontSizes.md};
     font-weight: 400;
     margin-top: 0.5rem;
+    color: ${themes.colors.white};
 `;
 
 export const MovieInfo = styled.div`

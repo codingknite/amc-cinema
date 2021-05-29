@@ -81,6 +81,7 @@ export const MovieInfo = styled.div`
     }
 
     .buttons {
+        display: flex;
         margin-top: 2rem;
         padding: 2rem;
 
