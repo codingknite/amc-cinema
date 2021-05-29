@@ -70,11 +70,10 @@ const NextArrowGenres = ({ onClick }) => {
         <GrNext
             style={{
                 ...genreStyles,
-                right: '10px',
-                top: `${window.screen.width < 400 ? '100%' : '50%'}`,
-                marginTop: `${window.screen.width < 400 ? '1.2rem' : '0'}`,
+                right: '5px',
+                top: '1.4rem',
             }}
-            size={`${window.screen.width < 321 ? '1.6rem' : '2rem'}`}
+            size='1.6rem'
             onClick={onClick}
         />
     );
@@ -86,11 +85,10 @@ const PrevArrowGenres = ({ onClick }) => {
             style={{
                 ...genreStyles,
                 zIndex: 1,
-                left: '10px',
-                top: `${window.screen.width < 400 ? '100%' : '50%'}`,
-                marginTop: `${window.screen.width < 400 ? '1.2rem' : '0'}`,
+                left: '5px',
+                top: '1.4rem',
             }}
-            size={`${window.screen.width < 321 ? '1.6rem' : '2rem'}`}
+            size='1.6rem'
             onClick={onClick}
         />
     );
@@ -154,7 +152,7 @@ export const genreSettings = {
             }
         },
         {
-            breakpoint: 320,
+            breakpoint: 390,
             settings: {
                 slidesToShow: 2,
                 slidesToScroll: 1
