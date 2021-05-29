@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 import * as Styles from './styles';
 import generateSlug from 'utils/generateSlug';
 import MovieCards from 'components/MovieCards/index';
 import { useFavorite } from 'context/useFavorites';
+import { StyledLinkButton } from 'components/common/LinkButton';
 
 const DiscoverCategories = ({ category, data, loading }) => {
   const { favorites, dispatchFavorites } = useFavorite();
@@ -23,7 +23,13 @@ const DiscoverCategories = ({ category, data, loading }) => {
             favorites={favorites}
             dispatchFavorites={dispatchFavorites}
           />
-          <Link to={`/discover/${generateSlug(category)}`}>See All</Link>
+          <StyledLinkButton
+            to={`/discover/${generateSlug(category)}`}
+            width="7rem"
+            flexEnd={true}
+          >
+            See All
+          </StyledLinkButton>
         </Styles.Wrapper>
       )}
     </>

@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { GiRead } from 'react-icons/gi';
 import { BsStarFill } from 'react-icons/bs';
 import { SiGooglecalendar } from 'react-icons/si';
@@ -8,8 +7,7 @@ import * as Styles from './styles';
 import { themes } from 'styles/themes';
 import { genres } from 'data/categories';
 import { posterUrl } from 'utils/config';
-
-// import { LinkButton } from '~/components/common/Button';
+import { StyledLinkButton } from 'components/common/LinkButton';
 
 const FeaturedMovie = ({ movie }) => {
   const findGenre = (id) => genres.filter((genre) => genre.id === id)[0].name;
@@ -36,15 +34,15 @@ const FeaturedMovie = ({ movie }) => {
               {movie.overview.split(' ').slice(0, 40).join(' ') + ' . . .'}
             </p>
             <div className="buttons">
-              <Link to={`/movie/${movie.id}`}>
+              <StyledLinkButton to={`/movie/${movie.id}`}>
                 <GiRead />
                 <p>Learn More</p>
-              </Link>
+              </StyledLinkButton>
 
-              <Link to={`/booking/${movie.id}`}>
+              <StyledLinkButton to={`/booking/${movie.id}`}>
                 <SiGooglecalendar />
                 <p>Book Movie</p>
-              </Link>
+              </StyledLinkButton>
             </div>
           </Styles.MovieInfo>
         </Styles.MovieWrapper>
