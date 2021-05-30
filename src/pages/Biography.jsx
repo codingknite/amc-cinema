@@ -9,7 +9,7 @@ import paginateReducer from 'reducers/paginateReducer';
 import { fetchData } from 'utils/fetchData';
 import { useFavorite } from 'context/useFavorites';
 import { Header } from 'components/Discover/Categories/styles';
-import { APIKey, baseUrl, imdbUrl, posterUrl } from 'utils/config';
+import { APIKey, baseUrl, imdbBiography, posterUrl } from 'utils/config';
 import MainLoader from 'components/Loader';
 
 const Biography = () => {
@@ -56,7 +56,7 @@ const Biography = () => {
   const {
     name,
     birthday,
-    id,
+    imdb_id: id,
     biography,
     homepage,
     place_of_birth: location,
@@ -64,7 +64,7 @@ const Biography = () => {
     profile_path: bioImage,
   } = bioData;
 
-  const imdbLink = imdbUrl + id;
+  const imdbLink = imdbBiography + id;
   const posterLink = posterUrl + bioImage;
 
   return (
