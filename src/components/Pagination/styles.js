@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { themes } from 'styles/themes';
 
+export const ButtonsWrapper = styled.div`
+    display: flex;
+    width: 100%;
+`;
+
 export const PrevButton = styled.button`
     background: ${themes.colors.white};
     height: 2.5rem;
