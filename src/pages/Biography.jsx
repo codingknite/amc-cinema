@@ -10,6 +10,7 @@ import { fetchData } from 'utils/fetchData';
 import { useFavorite } from 'context/useFavorites';
 import { Header } from 'components/Discover/Categories/styles';
 import { APIKey, baseUrl, imdbUrl, posterUrl } from 'utils/config';
+import MainLoader from 'components/Loader';
 
 const Biography = () => {
   const { personId } = useParams();
@@ -50,7 +51,7 @@ const Biography = () => {
     pages = featured.total_pages;
   }
 
-  if (isLoading) return <h2>Loading...</h2>;
+  if (isLoading) return <MainLoader />;
 
   const {
     name,

@@ -9,6 +9,7 @@ import { fetchData } from 'utils/fetchData';
 import { APIKey, baseUrl } from 'utils/config';
 import { useFavorite } from 'context/useFavorites';
 import { CardWrapper, PaginationWrapper } from 'styles/discover';
+import MainLoader from 'components/Loader';
 
 const DiscoverMovies = () => {
   const { category } = useParams();
@@ -45,7 +46,7 @@ const DiscoverMovies = () => {
   );
 
   if (isError) throw error.message;
-  if (isLoading) return <h2>Loading...</h2>;
+  if (isLoading) return <MainLoader />;
 
   const { page, total_pages: pages } = data;
 

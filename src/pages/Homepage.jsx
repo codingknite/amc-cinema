@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
+import MainLoader from 'components/Loader';
 
-// import PageHead from '~/components/Head'; use react-helmet
 import { fetchData } from 'utils/fetchData';
 import { APIKey, baseUrl } from 'utils/config';
 import FeaturedMovie from 'components/Featured/index';
@@ -32,8 +32,7 @@ const Homepage = () => {
 
   if (nowPlayingError) throw nowPlayingErrMsg.message;
   if (trendingError) throw trendingErrMsg.message;
-  if (nowPlayingLoading || trendingLoading)
-    return <h2>Loading...Please Wait!</h2>;
+  if (nowPlayingLoading || trendingLoading) return <MainLoader />;
 
   const randomFeaturedMovie = Math.floor(Math.random() * 19);
   const featured = trending.results.filter(
