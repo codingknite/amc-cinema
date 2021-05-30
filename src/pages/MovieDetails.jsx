@@ -12,6 +12,7 @@ import { fetchData } from 'utils/fetchData';
 import { useFavorite } from 'context/useFavorites';
 import { APIKey, baseUrl, imdbUrl } from 'utils/config';
 import { Header } from 'components/Discover/Categories/styles';
+import MainLoader from 'components/Loader';
 
 const Recommendations = styled.section`
   margin-bottom: 1rem;
@@ -75,7 +76,7 @@ const MovieDetails = () => {
     totalResults = movieRecommendations.total_results;
   }
 
-  if (infoLoading) return <h2>Loading...</h2>;
+  if (infoLoading) return <MainLoader />;
   if (castLoading) return null;
 
   const {
