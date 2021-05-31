@@ -7,6 +7,7 @@ export const APIKey = process.env.REACT_APP_API_KEY;
 
 export const baseUrl = 'https://api.themoviedb.org/3';
 export const imdbUrl = 'https://www.imdb.com/title/';
+export const imdbBiography = 'https://www.imdb.com/name/';
 export const posterUrl = 'https://image.tmdb.org/t/p/w500/';
 
 export const opts = {
