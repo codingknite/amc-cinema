@@ -1,9 +1,10 @@
 import dayjs from 'dayjs';
 
 import * as Styles from './styles';
+import profilePic from 'assets/profilePic.svg';
 import { WebLinks } from 'components/Movie/Details/styles';
 
-export default function CastBiography({
+const CastBiography = ({
   name,
   birthday,
   location,
@@ -12,11 +13,16 @@ export default function CastBiography({
   imdbLink,
   homepage,
   imageUrl,
-}) {
+}) => {
   return (
     <Styles.MainWrapper>
       <Styles.BioSection>
-        <img src={imageUrl} alt="name" />
+        {imageUrl.endsWith('null') ? (
+          <img src={profilePic} alt="name" className="not-found" />
+        ) : (
+          <img src={imageUrl} alt="name" className="profile-pic" />
+        )}
+
         <Styles.BioInfo>
           <Styles.StyledTitle>{name}</Styles.StyledTitle>
           {birthday ? (
@@ -52,4 +58,6 @@ export default function CastBiography({
       </Styles.BioSection>
     </Styles.MainWrapper>
   );
-}
+};
+
+export default CastBiography;

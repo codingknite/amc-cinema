@@ -9,7 +9,14 @@ export const MainWrapper = styled.section`
 `;
 
 export const BioSection = styled(HeaderDetails)`
-    img {
+    .not-found {
+        max-width: 35%;
+
+        @media (max-width: ${themes.breakpoints.md}) {
+            width: 50%;
+        }
+    }
+    .profile-pic {
         height: 34.375rem;
         border-radius: 0.3125rem;
 
