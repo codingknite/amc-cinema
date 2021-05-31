@@ -2,7 +2,7 @@ import Star from 'react-rating';
 import PropTypes from 'prop-types';
 import * as AiIcons from 'react-icons/ai';
 
-import { themes } from '../styles/themes';
+import { themes } from 'styles/themes';
 
 const Rating = ({ initialRating }) => {
   return (

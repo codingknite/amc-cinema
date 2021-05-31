@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Lazyload from 'react-lazyload';
 import { Link } from 'react-router-dom';
 
-import Rating from '../Rating';
 import * as Styles from './styles';
-import LikeFavorite from '../LikeFavorite';
-import { posterUrl } from '../../utils/config';
+import Rating from 'components/Rating';
+import LikeFavorite from 'components/LikeFavorite';
+import { posterUrl } from 'utils/config';
 
 const MovieCards = ({ data, favorites, dispatchFavorites }) => {
   const [imageLoaded, setImageLoaded] = useState(false);

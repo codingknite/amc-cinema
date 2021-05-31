@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import * as BsIcons from 'react-icons/bs';
-import { themes } from '../styles/themes';
+import { themes } from 'styles/themes';
 
 const LikeFavorites = ({ favorites, dispatchFavorites, movieId }) => (
   <div>
