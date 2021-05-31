@@ -14,7 +14,7 @@ import { useFavorite } from 'context/useFavorites';
 import { Header } from 'components/Discover/Categories/styles';
 import { StyledLinkButton } from 'components/common/LinkButton';
 
-export default function BrowseGenres() {
+const BrowseGenres = () => {
   const { favorites, dispatchFavorites } = useFavorite();
   const [selectedGenre, setSelectedGenre] = useState(config.initObject);
 
@@ -86,4 +86,6 @@ export default function BrowseGenres() {
       </StyledLinkButton>
     </Styles.MainWrapper>
   );
-}
+};
+
+export default BrowseGenres;
