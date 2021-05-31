@@ -68,17 +68,24 @@ const MovieDetails = ({
 
           <Styles.Links>
             {webLink ? (
-              <a href={webLink} target="_blank" rel="noopener noreferrer">
+              <Styles.WebLinks
+                href={webLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Official Website
-              </a>
+              </Styles.WebLinks>
             ) : null}
 
             {imdbLink ? (
-              <a href={imdbLink} target="_blank" rel="noopener noreferrer">
+              <Styles.WebLinks
+                href={imdbLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Imdb Profile
-              </a>
+              </Styles.WebLinks>
             ) : null}
-
             <StyledLinkButton to={`/booking/${generateSlug(movieId)}`}>
               Book Now
             </StyledLinkButton>
