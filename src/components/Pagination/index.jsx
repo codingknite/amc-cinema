@@ -22,7 +22,7 @@ const Pagination = ({ pageState, dispatch, page, pages }) => {
             scrollTo();
           }}
         >
-          Page {page + 1} <GrLinkNext color="white" />
+          Page {pageState + 1} <GrLinkNext color="white" />
         </Styles.NextButton>
       ) : pageState === pages ? (
         <Styles.PrevButton
@@ -31,10 +31,10 @@ const Pagination = ({ pageState, dispatch, page, pages }) => {
             scrollTo();
           }}
         >
-          <GrLinkPrevious /> Page {page - 1}
+          <GrLinkPrevious /> Page {pageState - 1}
         </Styles.PrevButton>
       ) : (
-        <>
+        <Styles.ButtonsWrapper>
           <Styles.PrevButton
             onClick={() => {
               dispatch({ type: 'prev' });
@@ -51,7 +51,7 @@ const Pagination = ({ pageState, dispatch, page, pages }) => {
           >
             Page {pageState + 1} <GrLinkNext color="white" />
           </Styles.NextButton>
-        </>
+        </Styles.ButtonsWrapper>
       )}
     </>
   );
