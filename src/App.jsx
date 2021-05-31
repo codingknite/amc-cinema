@@ -33,7 +33,7 @@ const App = () => {
       <GlobalStyles />
       <Routes>
         <Route path="*" element={<NotFound />} />
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" exact element={<Homepage />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/search" element={<Search />} />
         <Route path="/my-bookings" element={<Bookings />} />
