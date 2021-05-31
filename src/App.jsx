@@ -9,6 +9,7 @@ import { themes } from 'styles/themes';
 import BookMovie from 'pages/BookMovie';
 import Biography from 'pages/Biography';
 import Favorites from 'pages/Favorites';
+import NotFound from 'components/notFound';
 import MovieDetails from 'pages/MovieDetails';
 import DiscoverGenres from 'pages/DiscoverGenres';
 
@@ -22,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     background: #0a0908;
     color: ${themes.colors.white};
-	font-family: 'Open Sans'
+	  font-family: 'Open Sans'
   };
 `;
 
@@ -31,9 +32,10 @@ const App = () => {
     <>
       <GlobalStyles />
       <Routes>
-        <Route path="/" exact element={<Homepage />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<Homepage />} />
         <Route path="/favorites" element={<Favorites />} />
-        <Route path="/search" exact element={<Search />} />
+        <Route path="/search" element={<Search />} />
         <Route path="/my-bookings" element={<Bookings />} />
         <Route path="movie/:movieId" element={<MovieDetails />} />
         <Route path={'/booking/:movieId'} element={<BookMovie />} />
