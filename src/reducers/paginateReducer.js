@@ -1,4 +1,4 @@
-export default function paginationReducer(pageState, action) {
+const paginationReducer = (pageState, action) => {
     switch (action.type) {
         case 'initState':
             return 1;
@@ -14,3 +14,5 @@ export default function paginationReducer(pageState, action) {
             throw new Error('Unhandled action ' + action.type);
     }
 }
+
+export default paginationReducer;
