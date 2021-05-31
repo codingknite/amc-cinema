@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
 
 import * as Styles from './styles';
+import { WebLinks } from 'components/Movie/Details/styles';
 
 export default function CastBiography({
   name,
@@ -27,20 +28,24 @@ export default function CastBiography({
             <h3>Biography</h3>
             <p>
               {biography ? (
-                biography.split(' ').slice(0, 80).join(' ') + ' . . . . .'
+                biography.split(' ').slice(0, 80).join(' ') + ' . .'
               ) : (
                 <h3>Sorry, No Biography Found Here 😔</h3>
               )}
             </p>
           </Styles.Bio>
           <div>
-            <a href={imdbLink} target="_blank" rel="noopener noreferrer">
+            <WebLinks href={imdbLink} target="_blank" rel="noopener noreferrer">
               Imdb Profile
-            </a>
+            </WebLinks>
             {homepage && (
-              <a href={homepage} target="_blank" rel="noopener noreferrer">
+              <WebLinks
+                href={homepage}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Personal Website
-              </a>
+              </WebLinks>
             )}
           </div>
         </Styles.BioInfo>
