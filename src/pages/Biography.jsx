@@ -2,6 +2,9 @@ import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { useEffect, useReducer } from 'react';
 
+import MainLoader from 'components/Loader';
+import NotFound from 'components/notFound';
+import MetaData from 'components/MetaData';
 import CastBiography from 'components/CastBiography/index';
 import MovieCards from 'components/MovieCards/index';
 import Pagination from 'components/Pagination/index';
@@ -10,7 +13,6 @@ import { fetchData } from 'utils/fetchData';
 import { useFavorite } from 'context/useFavorites';
 import { Header } from 'components/Discover/Categories/styles';
 import { APIKey, baseUrl, imdbBiography, posterUrl } from 'utils/config';
-import MainLoader from 'components/Loader';
 
 const Biography = () => {
   const { personId } = useParams();
@@ -51,6 +53,7 @@ const Biography = () => {
     pages = featured.total_pages;
   }
 
+  if (bioData === 404) return <NotFound />;
   if (isLoading) return <MainLoader />;
 
   const {
@@ -69,6 +72,7 @@ const Biography = () => {
 
   return (
     <>
+      <MetaData title={`${name} | Biography`} />
       <CastBiography
         name={name}
         imageUrl={posterLink}
@@ -84,12 +88,16 @@ const Biography = () => {
         <Header>Also Featured In</Header>
         {featuredLoading ? (
           <h2>Loading...</h2>
-        ) : (
+        ) : featuredMovies.length ? (
           <MovieCards
             data={featuredMovies}
             favorites={favorites}
             dispatchFavorites={dispatchFavorites}
           />
+        ) : (
+          <h4 style={{ padding: '1rem' }}>
+            Sorry We Couldn<span>&apos;</span>t Find Any Recommendations For You
+          </h4>
         )}
 
         <Pagination

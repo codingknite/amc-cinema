@@ -2,6 +2,9 @@ import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { useEffect, useReducer } from 'react';
 
+import MetaData from 'components/MetaData';
+import MainLoader from 'components/Loader';
+import NotFound from 'components/notFound';
 import Pagination from 'components/Pagination/index';
 import MovieCards from 'components/MovieCards/index';
 import paginateReducer from 'reducers/paginateReducer';
@@ -10,7 +13,6 @@ import { genres } from 'data/categories';
 import { APIKey, baseUrl } from 'utils/config';
 import { useFavorite } from 'context/useFavorites';
 import { CardWrapper, PaginationWrapper } from 'styles/discover';
-import MainLoader from 'components/Loader';
 
 const BrowseMovies = () => {
   const { genre } = useParams();
@@ -19,19 +21,23 @@ const BrowseMovies = () => {
 
   // Return Id of chosen genre as [{id: x, name: genre}]
   const identifyCategory = (category) => {
-    const splitCategory = category.split('-');
-    if (category) {
-      if (splitCategory.length === 1) {
-        return genres.filter(
-          (genre) => genre.name.toLowerCase() === category
-        )[0].id;
-      } else if (splitCategory.length > 1) {
-        const catSplit = splitCategory.join(' ');
-        return genres.filter(
-          (genre) => genre.name.toLowerCase() === catSplit
-        )[0].id;
+    const findGenre = genres.find((g) => g.name.toLowerCase() === category);
+    if (findGenre) {
+      const splitCategory = category.split('-');
+      if (category) {
+        if (splitCategory.length === 1) {
+          return genres.filter(
+            (genre) => genre.name.toLowerCase() === category
+          )[0].id;
+        } else if (splitCategory.length > 1) {
+          const catSplit = splitCategory.join(' ');
+          return genres.filter(
+            (genre) => genre.name.toLowerCase() === catSplit
+          )[0].id;
+        }
       }
     }
+    return 'unknown';
   };
 
   const genreId = genre && identifyCategory(genre);
@@ -48,6 +54,7 @@ const BrowseMovies = () => {
     dispatch({ type: 'initState' });
   }, [genreId, dispatch]);
 
+  if (genreId === 'unknown') return <NotFound />;
   if (isError) throw error.message;
   if (isLoading) return <MainLoader />;
 
@@ -55,6 +62,7 @@ const BrowseMovies = () => {
 
   return (
     <>
+      <MetaData title={`Discover Genres`} />
       <CardWrapper>
         <MovieCards
           data={data.results}

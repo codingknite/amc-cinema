@@ -13,6 +13,8 @@ import { useFavorite } from 'context/useFavorites';
 import { APIKey, baseUrl, imdbUrl } from 'utils/config';
 import { Header } from 'components/Discover/Categories/styles';
 import MainLoader from 'components/Loader';
+import NotFound from 'components/notFound';
+import MetaData from 'components/MetaData';
 
 const Recommendations = styled.section`
   margin-bottom: 1rem;
@@ -76,6 +78,7 @@ const MovieDetails = () => {
     totalResults = movieRecommendations.total_results;
   }
 
+  if (movieInfo === 404) return <NotFound />;
   if (infoLoading) return <MainLoader />;
   if (castLoading) return null;
 
@@ -105,6 +108,7 @@ const MovieDetails = () => {
 
   return (
     <>
+      <MetaData title={`${title}`} />
       <Details
         title={title}
         tagline={tagline}

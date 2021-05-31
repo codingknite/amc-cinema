@@ -2,6 +2,7 @@ import { useReducer } from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 
+import MetaData from 'components/MetaData';
 import Pagination from 'components/Pagination/index';
 import MovieCards from 'components/MovieCards/index';
 import paginateReducer from 'reducers/paginateReducer';
@@ -10,6 +11,7 @@ import { APIKey, baseUrl } from 'utils/config';
 import { useFavorite } from 'context/useFavorites';
 import { CardWrapper, PaginationWrapper } from 'styles/discover';
 import MainLoader from 'components/Loader';
+import NotFound from 'components/notFound';
 
 const DiscoverMovies = () => {
   const { category } = useParams();
@@ -31,8 +33,12 @@ const DiscoverMovies = () => {
       discoverCategory = 'popular';
       break;
     }
-    default: {
+    case 'popular': {
       discoverCategory = 'top_rated';
+      break;
+    }
+    default: {
+      discoverCategory = 'unknown';
       break;
     }
   }
@@ -45,6 +51,7 @@ const DiscoverMovies = () => {
       )
   );
 
+  if (discoverCategory === 'unknown') return <NotFound />;
   if (isError) throw error.message;
   if (isLoading) return <MainLoader />;
 
@@ -52,6 +59,7 @@ const DiscoverMovies = () => {
 
   return (
     <>
+      <MetaData title={`Discover Movies`} />
       <CardWrapper>
         <MovieCards
           data={data.results}
