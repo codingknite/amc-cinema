@@ -2,14 +2,16 @@ import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { useEffect, useReducer } from 'react';
 
-import MainLoader from 'components/Loader';
+import { MainLoader } from 'components/Loaders';
 import NotFound from 'components/notFound';
 import MetaData from 'components/MetaData';
+import NavBar from 'components/NavBar/index';
 import CastBiography from 'components/CastBiography/index';
 import MovieCards from 'components/MovieCards/index';
 import Pagination from 'components/Pagination/index';
 import paginateReducer from 'reducers/paginateReducer';
 import { fetchData } from 'utils/fetchData';
+import { ContentLoader } from 'components/Loaders';
 import { useFavorite } from 'context/useFavorites';
 import { Header } from 'components/Discover/Categories/styles';
 import { APIKey, baseUrl, imdbBiography, posterUrl } from 'utils/config';
@@ -73,6 +75,7 @@ const Biography = () => {
   return (
     <>
       <MetaData title={`${name} | Biography`} />
+      <NavBar />
       <CastBiography
         name={name}
         imageUrl={posterLink}
@@ -87,7 +90,7 @@ const Biography = () => {
       <section>
         <Header>Also Featured In</Header>
         {featuredLoading ? (
-          <h2>Loading...</h2>
+          <ContentLoader />
         ) : featuredMovies.length ? (
           <MovieCards
             data={featuredMovies}

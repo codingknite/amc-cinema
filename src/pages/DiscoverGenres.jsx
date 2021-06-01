@@ -3,8 +3,9 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useReducer } from 'react';
 
 import MetaData from 'components/MetaData';
-import MainLoader from 'components/Loader';
+import { MainLoader } from 'components/Loaders';
 import NotFound from 'components/notFound';
+import NavBar from 'components/NavBar/index';
 import Pagination from 'components/Pagination/index';
 import MovieCards from 'components/MovieCards/index';
 import paginateReducer from 'reducers/paginateReducer';
@@ -21,21 +22,15 @@ const BrowseMovies = () => {
 
   // Return Id of chosen genre as [{id: x, name: genre}]
   const identifyCategory = (category) => {
+    const splitCategory = category.split('-');
     const findGenre = genres.find((g) => g.name.toLowerCase() === category);
     if (findGenre) {
-      const splitCategory = category.split('-');
-      if (category) {
-        if (splitCategory.length === 1) {
-          return genres.filter(
-            (genre) => genre.name.toLowerCase() === category
-          )[0].id;
-        } else if (splitCategory.length > 1) {
-          const catSplit = splitCategory.join(' ');
-          return genres.filter(
-            (genre) => genre.name.toLowerCase() === catSplit
-          )[0].id;
-        }
-      }
+      return genres.filter((genre) => genre.name.toLowerCase() === category)[0]
+        .id;
+    } else if (category === 'science-fiction') {
+      const catSplit = splitCategory.join(' ');
+      return genres.filter((genre) => genre.name.toLowerCase() === catSplit)[0]
+        .id;
     }
     return 'unknown';
   };
@@ -63,6 +58,7 @@ const BrowseMovies = () => {
   return (
     <>
       <MetaData title={`Discover Genres`} />
+      <NavBar />
       <CardWrapper>
         <MovieCards
           data={data.results}

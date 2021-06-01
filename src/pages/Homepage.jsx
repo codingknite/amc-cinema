@@ -1,7 +1,8 @@
 import { useQuery } from 'react-query';
 
-import MainLoader from 'components/Loader';
+import { MainLoader } from 'components/Loaders';
 import MetaData from 'components/MetaData';
+import NavBar from 'components/NavBar/index';
 import { fetchData } from 'utils/fetchData';
 import { APIKey, baseUrl } from 'utils/config';
 import FeaturedMovie from 'components/Featured/index';
@@ -43,6 +44,7 @@ const Homepage = () => {
   return (
     <>
       <MetaData title="Home | MovieHouse" />
+      <NavBar />
       <main>
         <FeaturedMovie movie={featured} />
         <DiscoverCategories category="Now Playing" data={nowPlaying.results} />

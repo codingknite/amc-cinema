@@ -4,6 +4,7 @@ import { Element } from 'react-scroll';
 import { useParams } from 'react-router-dom';
 import { useEffect, useReducer } from 'react';
 
+import NavBar from 'components/NavBar/index';
 import Pagination from 'components/Pagination/index';
 import MovieCards from 'components/MovieCards/index';
 import Details from 'components/Movie/Details/index';
@@ -12,7 +13,7 @@ import { fetchData } from 'utils/fetchData';
 import { useFavorite } from 'context/useFavorites';
 import { APIKey, baseUrl, imdbUrl } from 'utils/config';
 import { Header } from 'components/Discover/Categories/styles';
-import MainLoader from 'components/Loader';
+import { MainLoader, ContentLoader } from 'components/Loaders';
 import NotFound from 'components/notFound';
 import MetaData from 'components/MetaData';
 
@@ -109,6 +110,7 @@ const MovieDetails = () => {
   return (
     <>
       <MetaData title={`${title}`} />
+      <NavBar />
       <Details
         title={title}
         tagline={tagline}
@@ -131,7 +133,7 @@ const MovieDetails = () => {
         <Recommendations>
           <Header>You might also like</Header>
           {recommendedLoading ? (
-            <h2>Loading...</h2>
+            <ContentLoader />
           ) : (
             <MovieCards
               data={movieRecommendations.results}
