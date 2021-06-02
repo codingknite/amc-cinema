@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const CardWrapper = styled.div`
-  margin-top: 0; // 6.5rem -> Navbar
+  margin-top: 6.5rem;
 `;
 
 export const PaginationWrapper = styled.section`
