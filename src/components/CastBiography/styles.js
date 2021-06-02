@@ -5,7 +5,7 @@ import { Title, HeaderDetails } from 'components/Movie/Details/styles';
 
 
 export const MainWrapper = styled.section`
-    margin-top: 0; // 6.5rem -> Navbar
+    margin-top: 6.5rem; 
 `;
 
 export const BioSection = styled(HeaderDetails)`
