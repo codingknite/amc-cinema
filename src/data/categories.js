@@ -62,10 +62,6 @@ export const genres = [
         "name": "Science Fiction"
     },
     {
-        "id": 10770,
-        "name": "TV Movie"
-    },
-    {
         "id": 53,
         "name": "Thriller"
     },
