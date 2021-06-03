@@ -34,7 +34,7 @@ const FeaturedMovie = ({ movie }) => {
               {movie.overview.split(' ').slice(0, 40).join(' ') + ' . . .'}
             </p>
             <div className="buttons">
-              <StyledLinkButton to={`/movie/${movie.id}`}>
+              <StyledLinkButton to={`/movie/${movie.id}`} bottomMargin={true}>
                 <GiRead />
                 <p>Learn More</p>
               </StyledLinkButton>
