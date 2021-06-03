@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import * as Styles from './styles';
 import generateSlug from 'utils/generateSlug';
 import MovieCards from 'components/MovieCards/index';
+import { ContentLoader } from 'components/Loaders';
 import { useFavorite } from 'context/useFavorites';
 import { StyledLinkButton } from 'components/common/LinkButton';
 
@@ -14,7 +15,7 @@ const DiscoverCategories = ({ category, data, loading }) => {
     <>
       <Styles.Header>{category}</Styles.Header>
       {loading ? (
-        <h2>Loading...</h2>
+        <ContentLoader />
       ) : (
         <Styles.Wrapper>
           <MovieCards

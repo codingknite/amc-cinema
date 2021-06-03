@@ -10,6 +10,7 @@ import generateSlug from 'utils/generateSlug';
 import MovieCards from 'components/MovieCards/index';
 import { genres } from 'data/categories';
 import { fetchData } from 'utils/fetchData';
+import { ContentLoader } from 'components/Loaders';
 import { useFavorite } from 'context/useFavorites';
 import { Header } from 'components/Discover/Categories/styles';
 import { StyledLinkButton } from 'components/common/LinkButton';
@@ -68,7 +69,7 @@ const BrowseGenres = () => {
       </Styles.SliderWrapper>
 
       {loading ? (
-        <h2>Loading</h2>
+        <ContentLoader />
       ) : (
         <MovieCards
           data={discoveredMovies}
