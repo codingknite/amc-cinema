@@ -1,5 +1,4 @@
 import dayjs from 'dayjs';
-import { Link } from 'react-router-dom';
 import Lazyload from 'react-lazyload';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import { BsFillCameraVideoFill } from 'react-icons/bs';
@@ -9,13 +8,15 @@ import Rating from 'components/Rating';
 import { posterUrl } from 'utils/config';
 import useFetchAll from 'hooks/useFetchAll';
 import { useFavorite } from 'context/useFavorites';
+import { MainLoader } from 'components/Loaders';
+import { StyledLinkButton } from 'components/common/LinkButton';
 
 const FavoriteMovies = () => {
   const { dispatchFavorites, favorites } = useFavorite();
   const { data, error, loading } = useFetchAll(favorites);
 
   if (error) throw error;
-  if (loading) return <h2>Loading...</h2>;
+  if (loading) return <MainLoader />;
 
   return (
     <Styles.Wrapper>
@@ -58,9 +59,12 @@ const FavoriteMovies = () => {
               <p>{movie.overview}</p>
             </Styles.Overview>
             <Styles.Buttons>
-              <Link to={`/movie/${movie.id}`} className="learn-more-btn">
+              <StyledLinkButton
+                to={`/movie/${movie.id}`}
+                className="learn-more-btn"
+              >
                 Learn More
-              </Link>
+              </StyledLinkButton>
               <Styles.Button
                 onClick={() =>
                   dispatchFavorites({ type: 'favorite', payload: movie.id })

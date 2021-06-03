@@ -3,7 +3,7 @@ import { themes } from 'styles/themes';
 import { Header } from 'components/Discover/Categories/styles';
 
 export const Wrapper = styled.section`
-    margin-top: 0; // 6.5rem -> Navbar
+    margin-top: 6.5rem;
 `;
 
 export const StyledHeader = styled(Header)`
@@ -151,6 +151,7 @@ export const Overview = styled.div`
 
 export const Buttons = styled.div`
     padding: 0.5rem;
+    display: flex;
 
     @media (max-width: ${themes.breakpoints.sm}) {
         margin-left: auto;
