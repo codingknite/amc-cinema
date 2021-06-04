@@ -1,28 +1,38 @@
 import { useQuery } from 'react-query';
 import { useState, useEffect, useRef } from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 
+import NavBar from 'components/NavBar/index';
+import { ContentLoader } from 'components/Loaders';
 import MovieCards from 'components/MovieCards';
-import { themes } from 'styles/themes';
 import { fetchData } from 'utils/fetchData';
 import { useFavorite } from 'context/useFavorites';
 import { APIKey, baseUrl } from 'utils/config';
+import { themes } from 'styles/themes';
 
 const SearchSection = styled.section`
-  width: 100%;
   height: 10rem;
-  margin-top: 8rem;
+  margin-top: 6.5rem;
+  padding-top: 5rem;
+  padding-left: 3.5rem;
+  /* background-color: firebrick; */
+
+  @media (max-width: ${themes.breakpoints.sm}) {
+    height: 6rem;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    padding-left: 1rem;
+  }
 
   input {
-    width: 40rem;
-    padding: 1rem;
-    margin: 3rem;
+    width: 30%;
+    outline: none;
+    color: white;
+    font-size: 2rem;
+    background: none;
     border-top: none;
     border-left: none;
     border-right: none;
-    background: none;
-    outline: none;
-    color: white;
     border-radius: 1px;
     border-bottom: 5px solid white;
 
@@ -34,6 +44,23 @@ const SearchSection = styled.section`
       color: white;
       font-size: 2rem;
     }
+
+    @media (max-width: ${themes.breakpoints.sm}) {
+      width: 90%;
+      background: none;
+      font-size: 1.5rem;
+      border-radius: 1px;
+      border-bottom: 3px solid white;
+
+      &:focus {
+        font-size: 1.5rem;
+      }
+
+      &::placeholder {
+        color: white;
+        font-size: 1.5rem;
+      }
+    }
   }
 `;
 
@@ -41,11 +68,16 @@ const SearchTag = styled.section`
   .results-tag {
     font-size: 1.2rem;
     padding: 1.5rem;
+    /* background: blue; */
+
+    @media (max-width: ${themes.breakpoints.sm}) {
+      padding: 0 1rem 0;
+    }
   }
 
   .search-input {
     margin-left: 3rem;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -68,13 +100,12 @@ const Search = () => {
   }, []);
 
   const handleChange = (e) => setSearchInput(e.target.value);
-
   const { data, isLoading, isError, error } = useQuery(
     ['search movie', searchInput, APIKey],
     () =>
       fetchData(
         `${baseUrl}/search/movie?api_key=${APIKey}&language=en-US&page=1&include_adult=false&query=${
-          searchInput && searchInput
+          searchInput ? searchInput : '%27%27'
         }`
       )
   );
@@ -85,6 +116,7 @@ const Search = () => {
 
   return (
     <>
+      <NavBar />
       <SearchSection>
         <input
           type="text"
@@ -106,7 +138,7 @@ const Search = () => {
 
       <SearchResults>
         {!searchInput ? null : isLoading ? (
-          <h3>Loading...</h3>
+          <ContentLoader />
         ) : (
           <MovieCards
             data={filteredMovies}

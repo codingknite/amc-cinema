@@ -4,7 +4,7 @@ import { Button } from 'components/FavoriteMovies/styles';
 import { themes } from 'styles/themes';
 
 export const Wrapper = styled.section`
-    margin-top: 0; // 6.5rem -> Navbar
+    margin-top: 6.5rem;
 `;
 
 export const MovieInfo = styled.div`

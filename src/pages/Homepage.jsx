@@ -1,10 +1,12 @@
 import { useQuery } from 'react-query';
 
-// import PageHead from '~/components/Head'; use react-helmet
+import { MainLoader } from 'components/Loaders';
+import MetaData from 'components/MetaData';
+import NavBar from 'components/NavBar/index';
 import { fetchData } from 'utils/fetchData';
 import { APIKey, baseUrl } from 'utils/config';
 import FeaturedMovie from 'components/Featured/index';
-import DiscoverGenres from 'components/Discover/Genres/index';
+import BrowseGenres from 'components/Discover/Genres/index';
 import DiscoverCategories from 'components/Discover/Categories/index';
 
 const Homepage = () => {
@@ -32,8 +34,7 @@ const Homepage = () => {
 
   if (nowPlayingError) throw nowPlayingErrMsg.message;
   if (trendingError) throw trendingErrMsg.message;
-  if (nowPlayingLoading || trendingLoading)
-    return <h2>Loading...Please Wait!</h2>;
+  if (nowPlayingLoading || trendingLoading) return <MainLoader />;
 
   const randomFeaturedMovie = Math.floor(Math.random() * 19);
   const featured = trending.results.filter(
@@ -42,11 +43,13 @@ const Homepage = () => {
 
   return (
     <>
+      <MetaData title="Home | MovieHouse" />
+      <NavBar />
       <main>
         <FeaturedMovie movie={featured} />
         <DiscoverCategories category="Now Playing" data={nowPlaying.results} />
         <DiscoverCategories category="Trending" data={trending.results} />
-        <DiscoverGenres />
+        <BrowseGenres />
       </main>
     </>
   );

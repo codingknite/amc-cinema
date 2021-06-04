@@ -5,6 +5,7 @@ import * as Styles from './styles';
 import { posterUrl } from 'utils/config';
 import useFetchAll from 'hooks/useFetchAll';
 import { useBookings } from 'context/useBookings';
+import { MainLoader } from 'components/Loaders';
 import {
   MovieContainer,
   StyledHeader,
@@ -18,7 +19,7 @@ const MyBookings = () => {
   const { data, error, loading } = useFetchAll(bookedMovies);
 
   if (error) throw error;
-  if (loading) return <h2>Loading...</h2>;
+  if (loading) return <MainLoader />;
 
   const reverseDate = (_date) => _date.split('/').reverse().join('-');
 

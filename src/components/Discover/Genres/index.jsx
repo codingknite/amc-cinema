@@ -1,20 +1,21 @@
 import Slider from 'react-slick';
 import { useState } from 'react';
 import { useQuery } from 'react-query';
-import { Link } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css';
 import { scroller, Element } from 'react-scroll';
 
 import * as Styles from './styles';
-import MovieCards from 'components/MovieCards/index';
 import * as config from 'utils/config';
 import generateSlug from 'utils/generateSlug';
+import MovieCards from 'components/MovieCards/index';
 import { genres } from 'data/categories';
 import { fetchData } from 'utils/fetchData';
+import { ContentLoader } from 'components/Loaders';
 import { useFavorite } from 'context/useFavorites';
-import { Header, StyledLink } from 'components/Discover/Categories/styles';
+import { Header } from 'components/Discover/Categories/styles';
+import { StyledLinkButton } from 'components/common/LinkButton';
 
-export default function DiscoverGenres() {
+const BrowseGenres = () => {
   const { favorites, dispatchFavorites } = useFavorite();
   const [selectedGenre, setSelectedGenre] = useState(config.initObject);
 
@@ -68,7 +69,7 @@ export default function DiscoverGenres() {
       </Styles.SliderWrapper>
 
       {loading ? (
-        <h2>Loading</h2>
+        <ContentLoader />
       ) : (
         <MovieCards
           data={discoveredMovies}
@@ -76,7 +77,16 @@ export default function DiscoverGenres() {
           dispatchFavorites={dispatchFavorites}
         />
       )}
-      <Link to={`genres/${generateSlug(selectedGenre.name)}`}>See All</Link>
+      <StyledLinkButton
+        to={`genres/${generateSlug(selectedGenre.name)}`}
+        width="7rem"
+        flexEnd={true}
+        marginBottom="2rem"
+      >
+        See All
+      </StyledLinkButton>
     </Styles.MainWrapper>
   );
-}
+};
+
+export default BrowseGenres;

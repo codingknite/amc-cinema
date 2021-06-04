@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Lazyload from 'react-lazyload';
-import { Link } from 'react-router-dom';
 
 import * as Styles from './styles';
 import Rating from 'components/Rating';
 import LikeFavorite from 'components/LikeFavorite';
 import { posterUrl } from 'utils/config';
+import { StyledLink } from 'components/common/LinkButton';
 
 const MovieCards = ({ data, favorites, dispatchFavorites }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -14,7 +14,7 @@ const MovieCards = ({ data, favorites, dispatchFavorites }) => {
     <Styles.CardsWrapper>
       {data.map((movie) => (
         <Styles.MovieCard key={movie.id}>
-          <Link to={`/movie/${movie.id}`}>
+          <StyledLink to={`/movie/${movie.id}`}>
             <Styles.PosterWrapper imageLoaded={imageLoaded}>
               <Lazyload>
                 <Styles.MoviePoster
@@ -26,7 +26,7 @@ const MovieCards = ({ data, favorites, dispatchFavorites }) => {
                 <Styles.Title>{movie.title}</Styles.Title>
               </Lazyload>
             </Styles.PosterWrapper>
-          </Link>
+          </StyledLink>
           <Styles.MovieInfo className="movie-info">
             <Styles.MovieRating>
               <Rating initialRating={Math.round(movie.vote_average / 2)} />

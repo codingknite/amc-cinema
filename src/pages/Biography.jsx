@@ -2,14 +2,19 @@ import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { useEffect, useReducer } from 'react';
 
+import { MainLoader } from 'components/Loaders';
+import NotFound from 'components/notFound';
+import MetaData from 'components/MetaData';
+import NavBar from 'components/NavBar/index';
 import CastBiography from 'components/CastBiography/index';
 import MovieCards from 'components/MovieCards/index';
 import Pagination from 'components/Pagination/index';
 import paginateReducer from 'reducers/paginateReducer';
 import { fetchData } from 'utils/fetchData';
+import { ContentLoader } from 'components/Loaders';
 import { useFavorite } from 'context/useFavorites';
 import { Header } from 'components/Discover/Categories/styles';
-import { APIKey, baseUrl, imdbUrl, posterUrl } from 'utils/config';
+import { APIKey, baseUrl, imdbBiography, posterUrl } from 'utils/config';
 
 const Biography = () => {
   const { personId } = useParams();
@@ -50,12 +55,13 @@ const Biography = () => {
     pages = featured.total_pages;
   }
 
-  if (isLoading) return <h2>Loading...</h2>;
+  if (bioData === 404) return <NotFound />;
+  if (isLoading) return <MainLoader />;
 
   const {
     name,
     birthday,
-    id,
+    imdb_id: id,
     biography,
     homepage,
     place_of_birth: location,
@@ -63,11 +69,13 @@ const Biography = () => {
     profile_path: bioImage,
   } = bioData;
 
-  const imdbLink = imdbUrl + id;
+  const imdbLink = imdbBiography + id;
   const posterLink = posterUrl + bioImage;
 
   return (
     <>
+      <MetaData title={`${name} | Biography`} />
+      <NavBar />
       <CastBiography
         name={name}
         imageUrl={posterLink}
@@ -82,13 +90,17 @@ const Biography = () => {
       <section>
         <Header>Also Featured In</Header>
         {featuredLoading ? (
-          <h2>Loading...</h2>
-        ) : (
+          <ContentLoader />
+        ) : featuredMovies.length ? (
           <MovieCards
             data={featuredMovies}
             favorites={favorites}
             dispatchFavorites={dispatchFavorites}
           />
+        ) : (
+          <h4 style={{ padding: '1rem' }}>
+            Sorry We Couldn<span>&apos;</span>t Find Any Recommendations For You
+          </h4>
         )}
 
         <Pagination

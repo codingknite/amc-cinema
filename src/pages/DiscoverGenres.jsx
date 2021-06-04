@@ -2,6 +2,10 @@ import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { useEffect, useReducer } from 'react';
 
+import MetaData from 'components/MetaData';
+import { MainLoader } from 'components/Loaders';
+import NotFound from 'components/notFound';
+import NavBar from 'components/NavBar/index';
 import Pagination from 'components/Pagination/index';
 import MovieCards from 'components/MovieCards/index';
 import paginateReducer from 'reducers/paginateReducer';
@@ -19,18 +23,16 @@ const BrowseMovies = () => {
   // Return Id of chosen genre as [{id: x, name: genre}]
   const identifyCategory = (category) => {
     const splitCategory = category.split('-');
-    if (category) {
-      if (splitCategory.length === 1) {
-        return genres.filter(
-          (genre) => genre.name.toLowerCase() === category
-        )[0].id;
-      } else if (splitCategory.length > 1) {
-        const catSplit = splitCategory.join(' ');
-        return genres.filter(
-          (genre) => genre.name.toLowerCase() === catSplit
-        )[0].id;
-      }
+    const findGenre = genres.find((g) => g.name.toLowerCase() === category);
+    if (findGenre) {
+      return genres.filter((genre) => genre.name.toLowerCase() === category)[0]
+        .id;
+    } else if (category === 'science-fiction') {
+      const catSplit = splitCategory.join(' ');
+      return genres.filter((genre) => genre.name.toLowerCase() === catSplit)[0]
+        .id;
     }
+    return 'unknown';
   };
 
   const genreId = genre && identifyCategory(genre);
@@ -47,13 +49,16 @@ const BrowseMovies = () => {
     dispatch({ type: 'initState' });
   }, [genreId, dispatch]);
 
+  if (genreId === 'unknown') return <NotFound />;
   if (isError) throw error.message;
-  if (isLoading) return <h2>Loading...</h2>;
+  if (isLoading) return <MainLoader />;
 
   const { page, total_pages: pages } = data;
 
   return (
     <>
+      <MetaData title={`Discover Genres`} />
+      <NavBar />
       <CardWrapper>
         <MovieCards
           data={data.results}

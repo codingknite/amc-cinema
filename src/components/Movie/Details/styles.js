@@ -155,16 +155,17 @@ export const StyledOverview = styled.div`
 
 export const Links = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-top: 1rem;
-    padding: 1rem 1rem 0rem 1rem;
-    width: 100%;
-    
-    @media (max-width: ${themes.breakpoints.sm}) {
-        flex-direction: column;
-        margin-left: 2rem;
-        width: 90%;
-    }
+    padding: 1rem;
+`;
+
+export const WebLinks = styled.a`
+    padding: 0.8rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    color: ${themes.colors.white};
+    background-color: ${themes.colors.heartRed};
 `;
 
 export const Details = styled.section`
@@ -189,3 +190,10 @@ export const Details = styled.section`
         display: none;
     }
 `;
+
+
+/* @media (max-width: ${themes.breakpoints.sm}) {
+        flex-direction: column;
+        margin-left: 2rem;
+        width: 90%;
+    } */

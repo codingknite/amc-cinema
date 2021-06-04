@@ -2,7 +2,6 @@ import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 import YouTube from 'react-youtube';
 import LazyLoad from 'react-lazyload';
-import { Link } from 'react-router-dom';
 import { RiRadioButtonFill } from 'react-icons/ri';
 
 import * as Styles from './styles';
@@ -10,6 +9,7 @@ import Rating from 'components/Rating';
 import generateSlug from 'utils/generateSlug';
 import MovieCast from 'components/Movie/Cast';
 import { posterUrl, opts } from 'utils/config';
+import { StyledLinkButton } from 'components/common/LinkButton';
 
 const MovieDetails = ({
   title,
@@ -68,18 +68,27 @@ const MovieDetails = ({
 
           <Styles.Links>
             {webLink ? (
-              <a href={webLink} target="_blank" rel="noopener noreferrer">
+              <Styles.WebLinks
+                href={webLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Official Website
-              </a>
+              </Styles.WebLinks>
             ) : null}
 
             {imdbLink ? (
-              <a href={imdbLink} target="_blank" rel="noopener noreferrer">
+              <Styles.WebLinks
+                href={imdbLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Imdb Profile
-              </a>
+              </Styles.WebLinks>
             ) : null}
-
-            <Link to={`/booking/${generateSlug(movieId)}`}>Book Now</Link>
+            <StyledLinkButton to={`/booking/${generateSlug(movieId)}`}>
+              Book Now
+            </StyledLinkButton>
           </Styles.Links>
         </Styles.MovieDetails>
       </Styles.HeaderDetails>

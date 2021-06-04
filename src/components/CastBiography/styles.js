@@ -5,11 +5,18 @@ import { Title, HeaderDetails } from 'components/Movie/Details/styles';
 
 
 export const MainWrapper = styled.section`
-    margin-top: 0; // 6.5rem -> Navbar
+    margin-top: 6.5rem; 
 `;
 
 export const BioSection = styled(HeaderDetails)`
-    img {
+    .not-found {
+        max-width: 35%;
+
+        @media (max-width: ${themes.breakpoints.md}) {
+            width: 50%;
+        }
+    }
+    .profile-pic {
         height: 34.375rem;
         border-radius: 0.3125rem;
 

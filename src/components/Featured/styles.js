@@ -9,8 +9,12 @@ export const MovieWrapper = styled.div`
     background-size: cover; 
     min-height: 20rem;
     max-width: 100%;
-    margin-top: 0; // 6.5rem -> Navbar
+    margin-top: 6.5rem;
 
+    @media (max-width: ${themes.breakpoints.xsm}) {
+        margin-top: 4rem;
+    }
+    
     @media (max-width: ${themes.breakpoints.xsm}) {
         min-height: 32rem;
     }
@@ -81,6 +85,7 @@ export const MovieInfo = styled.div`
     }
 
     .buttons {
+        display: flex;
         margin-top: 2rem;
         padding: 2rem;
 

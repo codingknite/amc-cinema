@@ -8,7 +8,7 @@ export async function fetchData(url) {
             throw response;
         }
     } catch (error) {
-        console.log('WE HAVE AN ERROR ===>', error);
-        throw error;
+        console.log('WE HAVE AN ERROR ===>', error.status);
+        return error.status;
     }
 };

@@ -1,4 +1,4 @@
-export default function favoritesReducer(favorites, action) {
+const favoritesReducer = (favorites, action) => {
     switch (action.type) {
         case 'favorite':
             if (favorites.includes(action.payload)) {
@@ -12,3 +12,5 @@ export default function favoritesReducer(favorites, action) {
             throw new Error('Unhandled action ' + action.type);
     }
 }
+
+export default favoritesReducer;

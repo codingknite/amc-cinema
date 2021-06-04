@@ -1,7 +1,14 @@
 import MyBookings from 'components/MyBookings/index';
 
+import NavBar from 'components/NavBar';
+
 const Bookings = () => {
-  return <MyBookings />;
+  return (
+    <>
+      <NavBar />
+      <MyBookings />
+    </>
+  );
 };
 
 export default Bookings;

@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
 import Lazyload from 'react-lazyload';
-import { Link } from 'react-router-dom';
 
 import * as Styles from './styles';
 import { posterUrl } from 'utils/config';
+import { StyledLink } from 'components/common/LinkButton';
 
 const CastList = ({ name, personId, castId, profilePath }) => (
-  <Link to={`/biography/${personId}`}>
+  <StyledLink to={`/biography/${personId}`}>
     <div key={castId}>
       <Lazyload>
         <Styles.Cast src={posterUrl + `/${profilePath}`} alt={name} />
       </Lazyload>
     </div>
-  </Link>
+  </StyledLink>
 );
 
 CastList.propTypes = {
