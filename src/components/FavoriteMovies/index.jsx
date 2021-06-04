@@ -21,7 +21,7 @@ const FavoriteMovies = () => {
   return (
     <Styles.Wrapper>
       <Styles.StyledHeader>My Favourites</Styles.StyledHeader>
-      {data.reverse().map((movie, index) => (
+      {data.map((movie, index) => (
         <Styles.MovieContainer key={index}>
           <Lazyload height={200}>
             <img

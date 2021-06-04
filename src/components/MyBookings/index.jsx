@@ -27,7 +27,7 @@ const MyBookings = () => {
     <Styles.Wrapper>
       <StyledHeader>My Bookings</StyledHeader>
 
-      {data.reverse().map((movie) => {
+      {data.map((movie) => {
         return (
           <MovieContainer key={movie.id}>
             <Lazyload height={200}>
@@ -44,29 +44,26 @@ const MyBookings = () => {
               </Overview>
 
               {bookedInfo.map((m) => {
-                if (movie.id === m.id) {
-                  return (
-                    <Styles.BookingInfo>
-                      <div className="ticket-info">
-                        <p>
-                          🪑{' '}
-                          {m.adults + m.kids + m.seniors > 1
-                            ? `${m.adults + m.kids + m.seniors} Seats`
-                            : `${m.adults + m.kids + m.seniors} Seat`}
-                        </p>
-                        <p>🎥 {m.cinema}</p>
-                        <p>👓 {m.screen}</p>
-                      </div>
-                      <p className="date-info">
-                        Scheduled on
-                        <span>
-                          📆{' '}
-                          {Dayjs(reverseDate(m.date)).format('DD MMMM, YYYY')}
-                        </span>
+                return movie.id === m.id ? (
+                  <Styles.BookingInfo>
+                    <div className="ticket-info">
+                      <p>
+                        🪑{' '}
+                        {m.adults + m.kids + m.seniors > 1
+                          ? `${m.adults + m.kids + m.seniors} Seats`
+                          : `${m.adults + m.kids + m.seniors} Seat`}
                       </p>
-                    </Styles.BookingInfo>
-                  );
-                }
+                      <p>🎥 {m.cinema}</p>
+                      <p>👓 {m.screen}</p>
+                    </div>
+                    <p className="date-info">
+                      Scheduled on
+                      <span>
+                        📆 {Dayjs(reverseDate(m.date)).format('DD MMMM, YYYY')}
+                      </span>
+                    </p>
+                  </Styles.BookingInfo>
+                ) : null;
               })}
               <Styles.CancelButton
                 onClick={() => {

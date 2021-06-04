@@ -7,7 +7,7 @@ const BookingsContext = React.createContext(null);
 
 let initialBookings;
 try {
-    initialBookings = JSON.parse(localStorage.getItem('bookings')) ?? [];
+    initialBookings = JSON.parse(localStorage.getItem('bookings')).reverse() ?? [];
 } catch (error) {
     initialBookings = [];
     console.error('Bookings could not be parsed');
