@@ -43,7 +43,7 @@ const Homepage = () => {
 
   return (
     <>
-      <MetaData title="Home | MovieHouse" />
+      <MetaData title="Home | Twilight" />
       <NavBar />
       <main>
         <FeaturedMovie movie={featured} />
