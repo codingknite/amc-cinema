@@ -9,6 +9,7 @@ import { fetchData } from 'utils/fetchData';
 import { useFavorite } from 'context/useFavorites';
 import { APIKey, baseUrl } from 'utils/config';
 import { themes } from 'styles/themes';
+import MetaData from 'components/MetaData';
 
 const SearchSection = styled.section`
   height: 10rem;
@@ -68,7 +69,6 @@ const SearchTag = styled.section`
   .results-tag {
     font-size: 1.2rem;
     padding: 1.5rem;
-    /* background: blue; */
 
     @media (max-width: ${themes.breakpoints.sm}) {
       padding: 0 1rem 0;
@@ -116,6 +116,7 @@ const Search = () => {
 
   return (
     <>
+      <MetaData title="Twilight | Search Movies" />
       <NavBar />
       <SearchSection>
         <input
