@@ -91,16 +91,16 @@ const Biography = () => {
         <Header>Also Featured In</Header>
         {featuredLoading ? (
           <ContentLoader />
-        ) : featuredMovies.length ? (
+        ) : featuredMovies.length === 0 ? (
+          <h4 style={{ padding: '1rem' }}>
+            Sorry We Couldn<span>&apos;</span>t Find Any Recommendations For You
+          </h4>
+        ) : (
           <MovieCards
             data={featuredMovies}
             favorites={favorites}
             dispatchFavorites={dispatchFavorites}
           />
-        ) : (
-          <h4 style={{ padding: '1rem' }}>
-            Sorry We Couldn<span>&apos;</span>t Find Any Recommendations For You
-          </h4>
         )}
 
         <Pagination

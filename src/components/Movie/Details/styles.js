@@ -17,7 +17,7 @@ export const HeaderDetails = styled.div`
 
     @media (max-width: ${themes.breakpoints.md}) {
         width: 100%;
-        padding: 0.5rem;
+        padding: 0.5rem; 
         flex-direction: column;
         align-items: center;
     }
@@ -158,6 +158,11 @@ export const Links = styled.div`
     justify-content: space-evenly;
     margin-top: 1rem;
     padding: 1rem;
+
+    @media (max-width: ${themes.breakpoints.sm}) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 `;
 
 export const WebLinks = styled.a`
@@ -166,6 +171,13 @@ export const WebLinks = styled.a`
     text-decoration: none;
     color: ${themes.colors.white};
     background-color: ${themes.colors.heartRed};
+    width: 9rem;
+    text-align: center;
+
+    @media (max-width: ${themes.breakpoints.sm}) {
+        margin: 0 0.5rem 1rem 0;
+    }
+
 `;
 
 export const Details = styled.section`
