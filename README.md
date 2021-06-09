@@ -12,33 +12,33 @@
 
 ## General Folder Structure 
 
-|-- `src` - source code  
+|-- `src/` - source code  
 
-|--- `assets` - svg assets 
+|--- `/assets` - svg assets 
 
-|--- `components` - react components
+|--- `/components` - react components
 
-|--- `context` - react context API
+|--- `/context` - react context API
 
-|--- `hooks` - custom hooks
+|--- `/hooks` - custom hooks
 
-|--- `pages` - main application pages
+|--- `/pages` - main application pages
 
-|--- `reducers` - reducer functions
+|--- `/reducers` - reducer functions
 
-|--- `styles` - global styles and themes
+|--- `/styles` - global styles and themes
 
-|--- `utils` - helper functions and config file
+|--- `/utils` - helper functions and config file
 
 ## Component Folder Structure 
 
-|-- `component` - components directory
+|-- `component/` - components directory
 
-|--- `component directory`  
+|--- `/component directory/`  
 
-|---- `index.jsx` - component entry point
+|---- `/index.jsx` - component entry point
 
-|---- `styles.js` - styles file ~ styled-components
+|---- `/styles.js` - styles file ~ styled-components
 
 ## Scripts
 
