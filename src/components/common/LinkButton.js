@@ -13,7 +13,7 @@ export const StyledLinkButton = styled(Link)`
   width: ${(props) => props.width ? props.width : '9rem'};
   padding: 0.8rem;
   margin-right: 1rem;
-  margin-bottom: ${(props) => props.bottomMargin ? '1rem' : '0rem'};
+  margin-bottom: ${(props) => props.bottommargin ? '1rem' : '0rem'};
   border-radius: 2rem;
   display: flex;
   align-items: center;
