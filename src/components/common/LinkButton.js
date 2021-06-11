@@ -10,6 +10,7 @@ export const StyledLink = styled(Link)`
 
 export const StyledLinkButton = styled(Link)`
   border: none;
+  font-size: 0.875rem;
   width: ${(props) => props.width ? props.width : '9rem'};
   padding: 0.8rem;
   margin-right: 1rem;

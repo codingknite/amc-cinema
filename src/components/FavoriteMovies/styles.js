@@ -3,7 +3,12 @@ import { themes } from 'styles/themes';
 import { Header } from 'components/Discover/Categories/styles';
 
 export const Wrapper = styled.section`
-    margin-top: 6.5rem;
+    margin-top: 0rem;
+
+    @media (max-width: ${themes.breakpoints.sm}) {
+        margin-top: 0rem;
+    }
+
 `;
 
 export const StyledHeader = styled(Header)`
@@ -13,7 +18,7 @@ export const StyledHeader = styled(Header)`
     @media (max-width: ${themes.breakpoints.sm}) {
         font-size: 2.3rem;
         font-weight: bold;
-        margin: 8rem 1rem 0rem 1rem;
+        margin: 5rem 1rem 0rem 1rem;
     }
 `;
 

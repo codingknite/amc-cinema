@@ -5,6 +5,11 @@ import { themes } from 'styles/themes';
 
 export const Wrapper = styled.section`
     margin-top: 6.5rem;
+
+  @media (max-width: ${themes.breakpoints.sm}) {
+    margin-top: 1rem;
+  }
+
 `;
 
 export const MovieInfo = styled.div`

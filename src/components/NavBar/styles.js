@@ -15,7 +15,8 @@ export const Nav = styled.nav`
 
     @media (max-width: ${themes.breakpoints.sm}) {
         height: 4rem;
-        background-color: #0a0908;
+        /* background-color: #0a0908; */
+        background-color: blue;
     }
 
     .nav-links {
@@ -191,6 +192,11 @@ export const DropdownList = styled.li`
             margin-left: 0rem;
             width: 250px;
             top: 1.2rem;
+
+            &:hover {
+                display: flex;
+                flex-wrap: wrap;
+            }
         }
     }
 
