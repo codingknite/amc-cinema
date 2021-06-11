@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useState } from 'react';
 import { BiDollar } from 'react-icons/bi';
 import DatePicker from 'react-datepicker';

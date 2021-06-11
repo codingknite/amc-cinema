@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import Slider from 'react-slick';
 import { useState } from 'react';
 import { useQuery } from 'react-query';

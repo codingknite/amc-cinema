@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import Star from 'react-rating';
 import PropTypes from 'prop-types';
 import * as AiIcons from 'react-icons/ai';

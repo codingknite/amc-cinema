@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/react-in-jsx-scope */
 import notFoundIcon from 'assets/404.svg';
 import styled from 'styled-components';
 import { themes } from 'styles/themes';

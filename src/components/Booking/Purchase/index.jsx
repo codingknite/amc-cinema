@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 import { useQuery } from 'react-query';
@@ -70,8 +71,8 @@ const Purchase = ({
               {adults > 1
                 ? `${adults} Adults, `
                 : adults === 1
-                ? '1 Adult, '
-                : null}
+                  ? '1 Adult, '
+                  : null}
               <span>
                 {kids > 1 ? `${kids} Kids, ` : kids === 1 ? '1 Kid, ' : null}
               </span>
@@ -79,8 +80,8 @@ const Purchase = ({
                 {seniors > 1
                   ? `${seniors} Senior Citizens`
                   : seniors === 1
-                  ? '1 Senior Citizen'
-                  : null}
+                    ? '1 Senior Citizen'
+                    : null}
               </span>
             </p>
           </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import Dayjs from 'dayjs';
 import Lazyload from 'react-lazyload';
 

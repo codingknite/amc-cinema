@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useNavigate } from 'react-router-dom';
 import { FaChevronDown } from 'react-icons/fa';
 import { BsSearch, BsCalendar } from 'react-icons/bs';

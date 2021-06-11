@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import PropTypes from 'prop-types';
 
 import * as Styles from './styles';

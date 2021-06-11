@@ -1,10 +1,11 @@
+/* eslint-disable react/react-in-jsx-scope */
 import PropTypes from 'prop-types';
 import { scroller } from 'react-scroll';
 import { GrLinkNext, GrLinkPrevious } from 'react-icons/gr';
 
 import * as Styles from './styles';
 
-const Pagination = ({ pageState, dispatch, page, pages }) => {
+const Pagination = ({ pageState, dispatch, pages }) => {
   const scrollTo = () => {
     return scroller.scrollTo('scrollelement', {
       duration: 1500,

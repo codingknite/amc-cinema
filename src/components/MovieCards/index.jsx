@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Lazyload from 'react-lazyload';

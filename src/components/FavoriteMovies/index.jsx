@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import dayjs from 'dayjs';
 import Lazyload from 'react-lazyload';
 import { RiRadioButtonFill } from 'react-icons/ri';

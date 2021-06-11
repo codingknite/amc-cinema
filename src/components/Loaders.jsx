@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { FlowerSpinner, HollowDotsSpinner } from 'react-epic-spinners';
 import styled from 'styled-components';
 

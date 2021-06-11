@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 

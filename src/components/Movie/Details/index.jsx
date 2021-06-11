@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 import YouTube from 'react-youtube';
