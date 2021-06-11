@@ -15,6 +15,7 @@ export const Nav = styled.nav`
 
     @media (max-width: ${themes.breakpoints.sm}) {
         height: 4rem;
+        background-color: #0a0908;
     }
 
     .nav-links {
@@ -70,28 +71,26 @@ export const Nav = styled.nav`
             background: #131418;
             height: 100vh;
             width: 100%;
+            margin-left: 500px;
             flex-direction: column;
-            clip-path: circle(50px at 90% -20%);
-            -webkit-clip-path: circle(50px at 90% -10%);
-            transition: all 1s ease-out;
+            transition: all 500ms ease-out;
             pointer-events: none;
         }
     }
 
     .toggle .line1 {
-            transform: rotate(-45deg) translate(-5px, 6px);
+            transform: rotate(-45deg) translate(-3.5px, 6px);
     }
     .toggle .line2 {
         transition: all 0.7s ease;
         width: 0;
     }
     .toggle .line3 {
-        transform: rotate(45deg) translate(-5px, -6px);
+        transform: rotate(45deg) translate(-3.5px, -6px);
     }
 
     .open {
-        clip-path: circle(2000px at 90% -10%);
-        -webkit-clip-path: circle(2000px at 90% -10%);
+        margin-left: 0;
         pointer-events: all;
     }
 `;
@@ -111,7 +110,8 @@ export const Hamburger = styled.div`
     outline: none;
     div {
         width: 30px;
-        height: 3px;
+        height: 1.5px;
+        border-radius: 2rem;
         background: #f2f5f7;
         margin: 5px;
         transition: all 0.3s ease;
