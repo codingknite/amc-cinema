@@ -202,10 +202,3 @@ export const Details = styled.section`
         display: none;
     }
 `;
-
-
-/* @media (max-width: ${themes.breakpoints.sm}) {
-        flex-direction: column;
-        margin-left: 2rem;
-        width: 90%;
-    } */
