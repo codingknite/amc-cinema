@@ -14,11 +14,6 @@ export const MovieWrapper = styled.div`
     @media (max-width: ${themes.breakpoints.xsm}) {
         margin-top: 4rem;
     }
-    
-    @media (max-width: ${themes.breakpoints.xsm}) {
-        min-height: 32rem;
-    }
-
 `;
 
 export const MovieStats = styled.div`
@@ -69,6 +64,7 @@ export const MovieStats = styled.div`
 
 export const MovieInfo = styled.div`
     margin: 4rem;
+
     .title {
         width: 80%;
         font-family: 'Rubik';
@@ -112,29 +108,14 @@ export const MovieInfo = styled.div`
         margin: 1rem;
         .title {
             width: 100%;
+            font-size: 2rem;
         }
         .overview {
             width: 100%;
         }
         .buttons {
+            flex-wrap: wrap;
             padding: 0.5rem;
-        }
-    }
-
-    @media (max-width: ${themes.breakpoints.xsm}) {
-        margin: 1rem;
-        .title {
-            font-size: 2rem
-        }
-        .overview {
-            font-size: ${themes.fontSizes.md}
-        }
-
-        .buttons {
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
     }
 `;

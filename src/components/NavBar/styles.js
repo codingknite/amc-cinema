@@ -15,8 +15,7 @@ export const Nav = styled.nav`
 
     @media (max-width: ${themes.breakpoints.sm}) {
         height: 4rem;
-        /* background-color: #0a0908; */
-        background-color: blue;
+        background-color: #0a0908;
     }
 
     .nav-links {
