@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import styled from 'styled-components';
 import { useQuery } from 'react-query';
 import { Element } from 'react-scroll';

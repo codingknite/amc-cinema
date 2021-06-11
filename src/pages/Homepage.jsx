@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useQuery } from 'react-query';
 
 import { MainLoader } from 'components/Loaders';

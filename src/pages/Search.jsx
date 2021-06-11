@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useQuery } from 'react-query';
 import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
@@ -16,7 +17,6 @@ const SearchSection = styled.section`
   margin-top: 6.5rem;
   padding-top: 5rem;
   padding-left: 3.5rem;
-  /* background-color: firebrick; */
 
   @media (max-width: ${themes.breakpoints.sm}) {
     height: 6rem;

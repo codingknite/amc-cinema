@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { useEffect, useReducer } from 'react';

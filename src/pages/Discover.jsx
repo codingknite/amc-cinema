@@ -1,3 +1,5 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable indent */
 import { useReducer } from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
@@ -60,7 +62,7 @@ const DiscoverMovies = () => {
 
   return (
     <>
-      <MetaData title={`Discover Movies`} />
+      <MetaData title={'Discover Movies'} />
       <NavBar />
       <CardWrapper>
         <MovieCards
