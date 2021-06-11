@@ -16,6 +16,7 @@ const MovieCast = ({ cast }) => {
     <Slider {...castSettings}>
       {cast.map((cast) => (
         <CastItem
+          key={cast.cast_id}
           name={cast.name}
           personId={cast.id}
           castId={cast.cast_id}
