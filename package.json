@@ -1,9 +1,10 @@
 {
-  "name": "twilight",
+  "name": "amc-cinema",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/user-event": "^13.1.9",
+    "axios": "^0.21.1",
     "dayjs": "^1.10.4",
     "history": "^5.0.0",
     "prop-types": "^15.7.2",
@@ -32,7 +33,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint ."
+    "lint": "eslint src"
   },
   "eslintConfig": {
     "extends": [
@@ -55,6 +56,12 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
-    "eslint-plugin-jest": "^24.3.6"
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }
