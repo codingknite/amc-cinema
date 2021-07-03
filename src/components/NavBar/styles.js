@@ -3,14 +3,15 @@ import styled from 'styled-components';
 import { themes } from 'styles/themes';
 
 export const Nav = styled.nav`
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0%; 
     z-index: 2;
     width: 100%;
-    display: flex;
     height: 6.5rem;
-    position: fixed;
-    top: 0%;
     cursor: pointer;
-    background-color: #131418;
+    background-color: #000;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
 
     @media (max-width: ${themes.breakpoints.sm}) {
@@ -19,7 +20,7 @@ export const Nav = styled.nav`
     }
 
     .nav-links {
-        width: 80%;
+        width: 60%;
         display: flex; 
         align-items: center;
         justify-content: space-around;
@@ -31,32 +32,9 @@ export const Nav = styled.nav`
             display: block;
             position: relative;
             top: 5px;
-            left: 40%;
-            width: 9px;
-            height: 9px;
-            background: red;
-            border-radius: 50%;
-        }
-        .active-genre::after{
-            content: "";
-            display: block;
-            position: relative;
-            top: -12px;
-            left: 88%;
-            width: 8px;
-            height: 8px;
-            background: ${themes.colors.heartRed};
-            border-radius: 50%;
-        } 
-
-        .active-bookmark::after{
-            content: "";
-            display: block;
-            position: relative;
-            top: 20px;
-            left: -40%;
-            width: 9px;
-            height: 9px;
+            left: 55%;
+            width: 6px;
+            height: 6px;
             background: red;
             border-radius: 50%;
         }
@@ -96,9 +74,10 @@ export const Nav = styled.nav`
 `;
 
 export const Logo = styled.img`
-    padding: 1rem;
-    height: 7rem;
-    width: 18rem;
+    height: 5rem;
+    width: 5rem;
+    align-self: center;
+    margin-left: 5rem;
 
     @media (max-width: ${themes.breakpoints.md}) {
         display: none;
@@ -132,90 +111,10 @@ export const Hamburger = styled.div`
 export const StyledNavLink = styled(NavLink)`
     text-decoration: none;
     color: ${themes.colors.white};
-    display: ${(props) => props.flexDisplay ? 'flex' : 'block'};
-    align-items: ${(props) => props.flexDisplay ? 'center' : ''};
-
-
-    &:hover {
-        color: silver;
-    }
-`;
-
-export const Dropdown = styled.div`
-    display: flex;
-    cursor: pointer;
-    align-items: center;
+    display: ${(props) => (props.flexDisplay ? 'flex' : 'block')};
+    align-items: ${(props) => (props.flexDisplay ? 'center' : '')};
 
     &:hover {
         color: silver;
-    }
-`;
-
-export const DropdownList = styled.li`
-    .dropdown-content {
-        position: absolute;
-        top: 4.1rem;
-        margin-left: -3rem;
-        background-color: ${themes.colors.white};
-        min-width: 180px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        border-radius: 0.2rem;
-        display: none;
-
-        @media (max-width: ${themes.breakpoints.sm}) {
-            position: relative;
-            top: 1.2rem;
-            margin-left: 3rem;
-            display: none;
-        }
-    }
-
-    &:hover .dropdown-content{
-        display: block;
-    }
-
-    .dropdown2 {
-        position: absolute;
-        top: 4.1rem;
-        margin-left: -6rem;
-        background-color: ${themes.colors.white};
-        width: 300px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        border-radius: 0.2rem;
-        display: none;
-        
-        @media (max-width: ${themes.breakpoints.sm}) {
-            position: relative;
-            margin-left: 0rem;
-            width: 250px;
-            top: 1.2rem;
-
-            &:hover {
-                display: flex;
-                flex-wrap: wrap;
-            }
-        }
-    }
-
-    &:hover .dropdown2 {
-        display: flex;
-        flex-wrap: wrap;
-    }
-`;
-
-export const DropdownNav = styled(NavLink)`
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    width: ${(props) => props.drop2 ? '50%' : 'auto'};
-
-    &:hover {
-        background: ${themes.colors.dullBlack};
-        color: ${themes.colors.white};
-        border-radius: 1.5px;
     }
 `;
