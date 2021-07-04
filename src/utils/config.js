@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { GrPrevious, GrNext } from 'react-icons/gr';
 import 'react-datepicker/dist/react-datepicker.css';
 
-// eslint-disable-next-line no-undef
 export const APIKey = process.env.REACT_APP_API_KEY;
 
 export const baseUrl = 'https://api.themoviedb.org/3';
+export const amcApiUrl = 'https://amc-cinema-api.vercel.app/api';
 export const imdbUrl = 'https://www.imdb.com/title/';
 export const imdbBiography = 'https://www.imdb.com/name/';
 export const posterUrl = 'https://image.tmdb.org/t/p/w500/';
@@ -19,31 +19,10 @@ export const opts = {
   },
 };
 
-export const initObject = {
-  name: 'science-fiction',
-  id: 878,
-};
-
-export const formState = {
-  session: false,
-  tickets: false,
-};
-
-export const startTime = {
-  screen: '',
-  time: '',
-};
-
 export const attendeeState = {
   adults: 0,
   kids: 0,
   seniors: 0,
-};
-
-export const bookingFormStep = {
-  step1: true,
-  step2: false,
-  step3: false,
 };
 
 const genreStyles = {
@@ -56,6 +35,7 @@ const genreStyles = {
   borderRadius: '2rem',
   cursor: 'pointer',
 };
+
 const castStyles = {
   background: 'white',
   position: 'absolute',
@@ -67,61 +47,53 @@ const castStyles = {
   cursor: 'pointer',
 };
 
-const NextArrowGenres = ({ onClick }) => {
-  return (
-    <GrNext
-      style={{
-        ...genreStyles,
-        right: '5px',
-        top: '1.4rem',
-      }}
-      size='1.6rem'
-      onClick={onClick}
-    />
-  );
-};
+const NextArrowGenres = ({ onClick }) => (
+  <GrNext
+    style={{
+      ...genreStyles,
+      right: '-40px',
+      top: '50%',
+    }}
+    size="1.6rem"
+    onClick={onClick}
+  />
+);
 
-const PrevArrowGenres = ({ onClick }) => {
-  return (
-    <GrPrevious
-      style={{
-        ...genreStyles,
-        zIndex: 1,
-        left: '5px',
-        top: '1.4rem',
-      }}
-      size='1.6rem'
-      onClick={onClick}
-    />
-  );
-};
+const PrevArrowGenres = ({ onClick }) => (
+  <GrPrevious
+    style={{
+      ...genreStyles,
+      zIndex: 1,
+      left: '-40px',
+      top: '50%',
+    }}
+    size="1.6rem"
+    onClick={onClick}
+  />
+);
 
-const PrevArrow = ({ onClick }) => {
-  return (
-    <GrPrevious
-      style={{
-        ...castStyles,
-        left: '-20px',
-        zIndex: 1,
-      }}
-      size="1.2rem"
-      onClick={onClick}
-    />
-  );
-};
+const PrevArrow = ({ onClick }) => (
+  <GrPrevious
+    style={{
+      ...castStyles,
+      left: '-20px',
+      zIndex: 1,
+    }}
+    size="1.2rem"
+    onClick={onClick}
+  />
+);
 
-const NextArrow = ({ onClick }) => {
-  return (
-    <GrNext
-      style={{
-        ...castStyles,
-        right: '-17.5px',
-      }}
-      size="1.2rem"
-      onClick={onClick}
-    />
-  );
-};
+const NextArrow = ({ onClick }) => (
+  <GrNext
+    style={{
+      ...castStyles,
+      right: '-17.5px',
+    }}
+    size="1.2rem"
+    onClick={onClick}
+  />
+);
 
 export const genreSettings = {
   infinite: true,
@@ -136,31 +108,34 @@ export const genreSettings = {
       settings: {
         slidesToShow: 7,
         slidesToScroll: 3,
-      }
+      },
     },
     {
       breakpoint: 800,
       settings: {
         slidesToShow: 5,
         slidesToScroll: 3,
-      }
+        arrows: false,
+      },
     },
     {
       breakpoint: 480,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 2,
-        initialSlide: 2
-      }
+        initialSlide: 2,
+        arrows: false,
+      },
     },
     {
       breakpoint: 390,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 1
-      }
-    }
-  ]
+        slidesToScroll: 1,
+        arrows: false,
+      },
+    },
+  ],
 };
 
 export const castSettings = {
@@ -176,35 +151,33 @@ export const castSettings = {
       settings: {
         slidesToShow: 6,
         slidesToScroll: 2,
-        initialSlide: 2
-      }
+        initialSlide: 2,
+      },
     },
     {
       breakpoint: 320,
       settings: {
         slidesToShow: 4,
         slidesToScroll: 2,
-        initialSlide: 2
-      }
+        initialSlide: 2,
+      },
     },
-  ]
+  ],
 };
 
-
-
-//prop types
+// prop types
 NextArrow.propTypes = {
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
 };
 
 PrevArrow.propTypes = {
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
 };
 
 NextArrowGenres.propTypes = {
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
 };
 
 PrevArrowGenres.propTypes = {
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
 };
