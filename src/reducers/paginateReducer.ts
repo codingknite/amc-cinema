@@ -1,4 +1,7 @@
-const paginationReducer = (pageState, action) => {
+interface Action {
+  type: string;
+}
+const paginationReducer = (pageState: number, action: Action): number => {
   switch (action.type) {
   case 'initState':
     return 1;
@@ -11,7 +14,7 @@ const paginationReducer = (pageState, action) => {
     return prevState;
   }
   default:
-    throw new Error('Unhandled action ' + action.type);
+    throw new Error(`Unhandled action ${action.type}`);
   }
 };
 
