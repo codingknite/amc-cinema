@@ -9,17 +9,27 @@ router.get('/', (req, res) => {
 
 router.get('/featured', async (req, res) => {
   try {
-    const apiData = await axios.get(`${config.baseApiUrl}/movie/popular?api_key=${config.APIKey}&language=en-US&page=1`);
-    if (apiData.data) {
-      const featuredMovies = [];
-      for (let x = 0; x < 3; x++) {
-        const randomNumber = Math.floor(Math.random() * 19);
-        const randomMovie = apiData.data.results[randomNumber];
-        featuredMovies.push(randomMovie);
-      }
-      res.json(featuredMovies);
-    }
-    loggers.error('Something went wrong', apiData);
+    // const apiData = await axios.get(`${config.baseApiUrl}/movie/popular?api_key=${config.APIKey}&language=en-US&page=1`);
+    // if (apiData.data) {
+    //   const featuredMovies = [];
+    //   for (let x = 0; x < 3; x++) {
+    //     const randomNumber = Math.floor(Math.random() * 19);
+    //     const randomMovie = apiData.data.results[randomNumber];
+    //     featuredMovies.push(randomMovie);
+    //   }
+    //   res.json(featuredMovies);
+    // }
+    // loggers.error('Something went wrong', apiData);
+    res.json({
+      messgae: 'This is a response',
+      data: [
+        {
+          id: 1,
+          person: 'Joel',
+          reason: 'Just testing'
+        }
+      ]
+    });
   } catch (error) {
     loggers.error('Error Fetching Data', error);
   }
