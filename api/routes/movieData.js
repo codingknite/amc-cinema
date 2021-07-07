@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 
 router.get('/featured', async (req, res) => {
   try {
-    // const apiData = await axios.get(`${config.baseApiUrl}/movie/popular?api_key=${config.APIKey}&language=en-US&page=1`);
+    const apiData = await axios.get(`${config.baseApiUrl}/movie/popular?api_key=${config.APIKey}&language=en-US&page=1`);
     // if (apiData.data) {
     //   const featuredMovies = [];
     //   for (let x = 0; x < 3; x++) {
@@ -21,14 +21,8 @@ router.get('/featured', async (req, res) => {
     // }
     // loggers.error('Something went wrong', apiData);
     res.json({
-      messgae: 'This is a response',
-      data: [
-        {
-          id: 1,
-          person: 'Joel',
-          reason: 'Just testing'
-        }
-      ]
+      messgae: 'Successful',
+      data: apiData
     });
   } catch (error) {
     loggers.error('Error Fetching Data', error);
