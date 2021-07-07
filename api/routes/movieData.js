@@ -3,6 +3,10 @@ const router = require('express').Router();
 const config = require('../utils/config');
 const loggers = require('../utils/loggers');
 
+router.get('/', (req, res) => {
+  res.send('<h1>Welcome to the AMC Cinema API</h1>');
+});
+
 router.get('/featured', async (req, res) => {
   try {
     const apiData = await axios.get(`${config.baseApiUrl}/movie/popular?api_key=${config.APIKey}&language=en-US&page=1`);
