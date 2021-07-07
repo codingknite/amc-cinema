@@ -1,13 +1,12 @@
 {
-  "name": "amc-cinema-server",
+  "name": "amc-cinema-api",
   "version": "1.0.0",
   "description": "",
   "main": ".eslintrc.js",
   "scripts": {
     "start": "node index.js",
     "start:dev": "nodemon index.js",
-    "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
