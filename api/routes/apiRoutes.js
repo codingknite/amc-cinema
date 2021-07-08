@@ -14,34 +14,12 @@ router.get('/featured', async (req, res) => {
       featuredMovies.push(randomMovie);
     }
 
-    res.json({
+    return res.json({
       message: 'success',
       data: featuredMovies
     });
   } catch (error) {
-    res.json({
-      message: 'failure',
-      error
-    });
-  }
-
-});
-router.get('/featured', (req, res) => {
-  res.send('<h2>Just a test</h2>');
-});
-
-router.get('/now-playing', async (req, res) => {
-  try {
-    const comingSoonData = await axios.get(`${config.baseApiUrl}/movie/popular?api_key=${config.APIKey}&language=en-US&page=1`);
-
-    const comingSoonMovies = comingSoonData.data.results.slice(0, 8);
-
-    res.json({
-      message: 'success',
-      data: comingSoonMovies
-    });
-  } catch (error) {
-    res.json({
+    return res.json({
       message: 'failure',
       error
     });
@@ -55,12 +33,12 @@ router.get('/now-playing', async (req, res) => {
 
     const comingSoonMovies = comingSoonData.data.results.slice(0, 8);
 
-    res.json({
+    return res.json({
       message: 'success',
       data: comingSoonMovies
     });
   } catch (error) {
-    res.json({
+    return res.json({
       message: 'failure',
       error
     });
@@ -72,14 +50,14 @@ router.get('/coming-soon', async (req, res) => {
   try {
     const comingSoonData = await axios.get(`${config.baseApiUrl}/movie/upcoming?api_key=${config.APIKey}&language=en-US&page=1`);
 
-    const comingSoonMovies = comingSoonData.data.results.slice(3, 6);
+    const comingSoonMovies = comingSoonData.data.results.slice(3, 7);
 
-    res.json({
+    return res.json({
       message: 'success',
       data: comingSoonMovies
     });
   } catch (error) {
-    res.json({
+    return res.json({
       message: 'failure',
       error
     });
