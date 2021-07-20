@@ -27,7 +27,7 @@ interface Data {
 }
 
 interface ReturnTypes {
-  data: Data[] | null;
+  data: unknown | null;
   error: unknown;
   loading: boolean;
 }
