@@ -67,7 +67,6 @@ export interface SerieResults {
 export interface TmdbMovieApiResponse {
   results: MovieResults[];
 }
-[];
 
 export interface AmcApiResponse {
   data: MovieResults[];
