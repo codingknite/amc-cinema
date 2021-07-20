@@ -3,6 +3,27 @@ interface Action {
   movieId: number;
 }
 
+interface BookedAction {
+  type: string;
+  movieId: number;
+  adults: number;
+  kids: number;
+  seniors: number;
+  date: string;
+  cinema: string;
+  screen: string;
+}
+
+interface BookedInfo {
+  id: number;
+  adults: number;
+  kids: number;
+  seniors: number;
+  date: string;
+  cinema: string;
+  screen: string;
+}
+
 export const bookingsReducer = (
   bookedMovies: Array<number>,
   action: Action
@@ -21,7 +42,7 @@ export const bookingsReducer = (
   }
 };
 
-export const bookingsInfo = (bookedInfo, action) => {
+export const bookingsInfo = (bookedInfo: BookedInfo[], action: BookedAction): BookedInfo[] => {
   switch (action.type) {
   case 'ADD_BOOKEDINFO':
     // eslint-disable-next-line no-case-declarations
