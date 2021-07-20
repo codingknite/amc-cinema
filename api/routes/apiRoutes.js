@@ -31,7 +31,7 @@ router.get('/now-playing', async (req, res) => {
   try {
     const comingSoonData = await axios.get(`${config.baseApiUrl}/movie/now_playing?api_key=${config.APIKey}&language=en-US&page=1`);
 
-    const comingSoonMovies = comingSoonData.data.results.slice(0, 8);
+    const comingSoonMovies = comingSoonData.data.results.slice(0, 10);
 
     return res.json({
       message: 'success',
@@ -50,7 +50,7 @@ router.get('/coming-soon', async (req, res) => {
   try {
     const comingSoonData = await axios.get(`${config.baseApiUrl}/movie/upcoming?api_key=${config.APIKey}&language=en-US&page=1`);
 
-    const comingSoonMovies = comingSoonData.data.results.slice(3, 7);
+    const comingSoonMovies = comingSoonData.data.results.slice(3, 8);
 
     return res.json({
       message: 'success',
