@@ -12,8 +12,6 @@ import FeaturedMovies from 'components/LandingPage/FeaturedMovies/index';
 import BrowseGenres from 'components/LandingPage/BrowseGenres/index';
 import LatestMovies from 'components/LandingPage/LatestMovies/index';
 
-//TODO: remember to handle null posters
-
 const Higlights = styled.div`
   display: flex;
   flex-direction: column;

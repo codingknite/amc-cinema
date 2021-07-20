@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import * as Styles from './styles';
-import generateSlug from 'utils/generateSlug';
 import { useFavorite } from 'context/useFavorites';
 import MovieCards from 'components/MovieCards/index';
 import { MovieResults } from 'types/types';
@@ -19,12 +17,12 @@ const LatestMovies = ({ category, data }: Props): JSX.Element => {
     <>
       <Styles.Wrapper>
         <Styles.Header>{category}</Styles.Header>
+        <Styles.StyledLink to="/movies">See All</Styles.StyledLink>
         <MovieCards
           data={data}
           favorites={favorites}
           dispatchFavorites={dispatchFavorites}
         />
-        <Link to={`/discover/${generateSlug(category)}`}>See All</Link>
       </Styles.Wrapper>
     </>
   );

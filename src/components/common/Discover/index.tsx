@@ -17,6 +17,7 @@ import { APIKey, baseUrl } from 'utils/config';
 import { useFavorite } from 'context/useFavorites';
 import { PaginationWrapper } from 'styles/discover';
 import { ContentLoader } from 'components/Loaders';
+import { ResultsPar } from 'components/LandingPage/BrowseGenres/styles';
 import {
   SliderWrapper,
   SliderButton,
@@ -89,7 +90,9 @@ const Discover = ({ type }: Props): JSX.Element => {
     <>
       <NavBar />
       <SliderModal />
-      <p>Showing results for: {selectedGenre.name}</p>
+      <ResultsPar>
+        Showing results for <span>{selectedGenre.name}</span>
+      </ResultsPar>
     </>
   );
 
@@ -114,6 +117,9 @@ const Discover = ({ type }: Props): JSX.Element => {
         <ContentLoader />
       </>
     );
+
+  console.log(data);
+  console.log(selectedGenre.id);
 
   const { total_pages: pages }: PageProps = data;
 
