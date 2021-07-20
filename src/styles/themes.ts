@@ -13,10 +13,11 @@ export const themes = {
   },
   breakpoints: {
     xsm: '360px',
-    sm: '600px',
-    md: '992px',
+    sm: '480px',
+    mdsm: '640px',
+    md: '768px',
     lg: '1024px',
-    xlg: '1200px',
+    xlg: '1280px',
   },
   fonts: {
     openSans: 'Open Sans',

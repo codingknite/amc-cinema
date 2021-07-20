@@ -13,7 +13,7 @@ const NextHighlight = ({ moviePoster, movieTitle }: Props): JSX.Element => {
       <div className="next-wrapper">
         <div>
           <p>Next </p>
-          <BsArrowRight size="1.5rem" style={{ fill: 'white' }} />
+          <BsArrowRight size="2rem" style={{ fill: 'white' }} />
         </div>
         <p className="movie-title">{movieTitle}</p>
       </div>

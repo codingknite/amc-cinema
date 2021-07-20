@@ -6,24 +6,30 @@ interface Props {
 }
 
 export const CardsWrapper = styled.section`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 18rem));
-  justify-content: space-around;
-  align-content: space-between;
-  align-items: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 98.5%;
+  align-self: center;
 
-  @media (max-width: ${themes.breakpoints.sm}) {
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 17.5rem));
+  @media (max-width: ${themes.breakpoints.xlg}) {
+    justify-content: center;
   }
 `;
 
 export const MovieCard = styled.div`
-  margin: 2rem 1rem 2rem 1rem;
-  width: 250px;
+  width: 236px;
 
   &:hover {
     transition: ease-in-out 500ms;
     transform: scale(1.03);
+  }
+
+  @media (min-width: 361px) and (max-width: ${themes.breakpoints.sm}) {
+    width: 155px;
+  }
+  @media (min-width: 481px) and (max-width: ${themes.breakpoints.mdsm}) {
+    width: 200px;
   }
 `;
 
@@ -34,7 +40,7 @@ export const PosterWrapper = styled.div`
 
 export const MoviePoster = styled.img<Props>`
   width: 100%;
-  height: 23.75rem;
+  height: 370px;
   border-radius: 0.8rem;
   color: ${themes.colors.white};
   background: ${(props) =>
@@ -54,6 +60,16 @@ export const MoviePoster = styled.img<Props>`
       background-position: 0% 50%;
     }
   }
+
+  @media (min-width: 361px) and (max-width: ${themes.breakpoints.sm}) {
+    height: 250px;
+    border-radius: 0.4rem;
+  }
+
+  @media (min-width: 481px) and (max-width: ${themes.breakpoints.mdsm}) {
+    height: 300px;
+    border-radius: 0.4rem;
+  }
 `;
 
 export const Title = styled.p`
@@ -71,6 +87,7 @@ export const MovieInfo = styled.div`
 
 export const MovieRating = styled.div`
   padding: 0.5rem;
+  size: 0.5em;
 `;
 
 export const LikeMovie = styled(MovieRating)`

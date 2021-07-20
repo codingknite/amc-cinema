@@ -50,12 +50,13 @@ const FavoriteMovies = (): JSX.Element => {
               </Styles.RatingInfo>
 
               <Styles.GenreInfo>
-                {movie.genres.map((genre) => (
-                  <div key={genre.id}>
-                    <RiRadioButtonFill color="gray" />
-                    <p>{genre.name}</p>
-                  </div>
-                ))}
+                {movie.genres &&
+                  movie.genres.map((genre) => (
+                    <div key={genre.id}>
+                      <RiRadioButtonFill color="gray" />
+                      <p>{genre.name}</p>
+                    </div>
+                  ))}
               </Styles.GenreInfo>
               <Styles.Overview>
                 <p>{movie.overview}</p>

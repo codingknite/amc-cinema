@@ -15,8 +15,13 @@ export const MovieWrapper = styled.div<MovieWrapperProps>`
   transition: background ease-in 1s;
   position: relative;
 
-  @media (max-width: ${themes.breakpoints.xsm}) {
-    margin-top: 4rem;
+  @media (max-width: ${themes.breakpoints.mdsm}) {
+    min-height: 35rem;
+    background-position: center;
+  }
+
+  @media (max-width: ${themes.breakpoints.md}) {
+    min-height: 30rem;
   }
 `;
 
@@ -44,7 +49,7 @@ export const MovieStats = styled.div`
   }
 
   @media (max-width: ${themes.breakpoints.sm}) {
-    padding: 1.5rem;
+    padding: 1.8rem;
 
     .stats {
       margin-left: 1rem;
@@ -96,6 +101,11 @@ export const MovieInfo = styled.div`
 
   @media (max-width: ${themes.breakpoints.md}) {
     margin: 2rem;
+    height: 32rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
     .title {
       font-size: 3rem;
       margin: 0 0 0.5rem 0;
@@ -108,7 +118,8 @@ export const MovieInfo = styled.div`
   }
 
   @media (max-width: ${themes.breakpoints.sm}) {
-    margin: 1rem;
+    margin: 0.5rem;
+
     .title {
       width: 100%;
       font-size: 2rem;
@@ -117,8 +128,7 @@ export const MovieInfo = styled.div`
       width: 100%;
     }
     .buttons {
-      flex-wrap: wrap;
-      padding: 0.5rem;
+      padding: 0rem;
     }
   }
 `;

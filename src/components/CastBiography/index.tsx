@@ -43,14 +43,10 @@ const CastBiography = ({
         <Styles.Bio>
           <h3>Biography</h3>
           <p>
-            {biography ? (
-              biography.split(' ').slice(0, 80).join(' ') + ' . .'
-            ) : (
-              <h3>Sorry, No Biography Found Here 😔</h3>
-            )}
+            {biography ? biography : <h3>Sorry, No Biography Found Here 😔</h3>}
           </p>
         </Styles.Bio>
-        <div>
+        <div className="links">
           <WebLinks href={imdbLink} target="_blank" rel="noopener noreferrer">
             Imdb Profile
           </WebLinks>

@@ -18,6 +18,7 @@ import { Header } from 'components/LandingPage/LatestMovies/styles';
 import { APIKey, baseUrl, imdbBiography, posterUrl } from 'utils/config';
 import { MovieResults } from 'types/types';
 import handleError from 'utils/handleError';
+import Footer from 'components/Footer';
 
 const Biography = (): JSX.Element => {
   const { personId } = useParams();
@@ -109,6 +110,7 @@ const Biography = (): JSX.Element => {
 
         <Pagination pageState={pageState} dispatch={dispatch} pages={pages} />
       </section>
+      <Footer />
     </>
   );
 };

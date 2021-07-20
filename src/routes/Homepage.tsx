@@ -2,7 +2,9 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import styled from 'styled-components';
 
+import Footer from 'components/Footer';
 import * as config from 'utils/config';
+import { themes } from 'styles/themes';
 import fetchData from 'utils/fetchData';
 import MetaData from 'components/MetaData';
 import handleError from 'utils/handleError';
@@ -12,13 +14,15 @@ import FeaturedMovies from 'components/LandingPage/FeaturedMovies/index';
 import BrowseGenres from 'components/LandingPage/BrowseGenres/index';
 import LatestMovies from 'components/LandingPage/LatestMovies/index';
 
-//TODO: remember to handle null posters
-
 const Higlights = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 6.5rem;
+
+  @media (max-width: ${themes.breakpoints.sm}) {
+    margin-top: 5rem;
+  }
 `;
 
 const Homepage = (): JSX.Element => {
@@ -82,6 +86,7 @@ const Homepage = (): JSX.Element => {
           )}
         <BrowseGenres />
       </main>
+      <Footer />
     </>
   );
 };

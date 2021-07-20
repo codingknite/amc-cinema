@@ -12,6 +12,7 @@ import MovieCards from 'components/MovieCards';
 import { useFavorite } from 'context/useFavorites';
 import { ContentLoader } from 'components/Loaders';
 import handleError from 'utils/handleError';
+import Footer from 'components/Footer';
 
 const SearchSection = styled.section`
   height: 10rem;
@@ -45,6 +46,11 @@ const SearchSection = styled.section`
     &::placeholder {
       color: white;
       font-size: 2rem;
+    }
+
+    @media (min-width: ${themes.breakpoints.sm}) and (max-width: ${themes
+  .breakpoints.lg}) {
+      width: 80%;
     }
 
     @media (max-width: ${themes.breakpoints.sm}) {
@@ -152,6 +158,7 @@ const Search = (): JSX.Element => {
           />
         )}
       </SearchResults>
+      <Footer />
     </>
   );
 };

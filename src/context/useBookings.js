@@ -16,7 +16,7 @@ try {
 
 let intialBookedInfo;
 try {
-  intialBookedInfo = JSON.parse(localStorage.getItem('bookedInfo')) ?? [];
+  intialBookedInfo = JSON.parse(localStorage.getItem('bookedInfo')).reverse() ?? [];
 } catch (error) {
   intialBookedInfo = [];
   console.error('Booked Info could not be parsed');

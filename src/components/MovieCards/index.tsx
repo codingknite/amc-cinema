@@ -12,8 +12,8 @@ import { MovieResults } from 'types/types';
 interface Props {
   data: MovieResults[];
   type?: string;
-  favorites: [];
-  dispatchFavorites: () => void;
+  favorites?: Array<number>;
+  dispatchFavorites?: () => void;
 }
 
 const MovieCards = ({
@@ -23,58 +23,65 @@ const MovieCards = ({
   dispatchFavorites,
 }: Props): JSX.Element => {
   const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <Styles.CardsWrapper>
-      {data.map((movie) => (
-        <Styles.MovieCard key={movie.id}>
-          <StyledLink
-            to={
-              !type
-                ? `/movie/${movie.id}`
-                : type === 'movies'
+      {data &&
+        data.map((movie) => (
+          <Styles.MovieCard key={movie.id}>
+            <StyledLink
+              to={
+                !type
                   ? `/movie/${movie.id}`
-                  : `/serie/${movie.id}`
-            }
-          >
-            <Styles.PosterWrapper>
-              <Lazyload>
-                <Styles.MoviePoster
-                  imageLoaded={imageLoaded}
-                  src={posterUrl + movie.poster_path}
-                  className="movie-banner"
-                  alt={
-                    !type
+                  : type === 'movies'
+                    ? `/movie/${movie.id}`
+                    : `/serie/${movie.id}`
+              }
+            >
+              <Styles.PosterWrapper>
+                <Lazyload>
+                  <Styles.MoviePoster
+                    imageLoaded={imageLoaded}
+                    src={posterUrl + movie.poster_path}
+                    className="movie-banner"
+                    alt={
+                      !type
+                        ? `${movie.title}`
+                        : type === 'movies'
+                          ? `${movie.title}`
+                          : `${movie.name}`
+                    }
+                    onLoad={() => setImageLoaded(true)}
+                  />
+                  <Styles.Title>
+                    {!type
                       ? `${movie.title}`
                       : type === 'movies'
                         ? `${movie.title}`
-                        : `${movie.name}`
-                  }
-                  onLoad={() => setImageLoaded(true)}
-                />
-                <Styles.Title>
-                  {!type
-                    ? `${movie.title}`
-                    : type === 'movies'
-                      ? `${movie.title}`
-                      : `${movie.name}`}
-                </Styles.Title>
-              </Lazyload>
-            </Styles.PosterWrapper>
-          </StyledLink>
-          <Styles.MovieInfo className="movie-info">
-            <Styles.MovieRating>
-              <Rating initialRating={Math.round(movie.vote_average / 2)} />
-            </Styles.MovieRating>
-            <Styles.LikeMovie>
-              <LikeFavorite
-                favorites={favorites}
-                dispatchFavorites={dispatchFavorites}
-                movieId={movie.id}
-              />
-            </Styles.LikeMovie>
-          </Styles.MovieInfo>
-        </Styles.MovieCard>
-      ))}
+                        : `${movie.name}`}
+                  </Styles.Title>
+                </Lazyload>
+              </Styles.PosterWrapper>
+            </StyledLink>
+            <Styles.MovieInfo className="movie-info">
+              <Styles.MovieRating>
+                <Rating initialRating={Math.round(movie.vote_average / 2)} />
+              </Styles.MovieRating>
+              <Styles.LikeMovie>
+                {type === 'series'
+                  ? movie.first_air_date.split('-')[0]
+                  : favorites &&
+                    dispatchFavorites && (
+                    <LikeFavorite
+                      favorites={favorites}
+                      dispatchFavorites={dispatchFavorites}
+                      movieId={movie.id}
+                    />
+                  )}
+              </Styles.LikeMovie>
+            </Styles.MovieInfo>
+          </Styles.MovieCard>
+        ))}
     </Styles.CardsWrapper>
   );
 };

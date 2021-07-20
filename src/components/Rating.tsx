@@ -11,9 +11,9 @@ const Rating = ({ initialRating }: Props): JSX.Element => {
   return (
     <Star
       emptySymbol={
-        <AiIcons.AiOutlineStar size="22" color={themes.colors.white} />
+        <AiIcons.AiOutlineStar size="20" color={themes.colors.white} />
       }
-      fullSymbol={<AiIcons.AiFillStar size="22" color={themes.colors.orange} />}
+      fullSymbol={<AiIcons.AiFillStar size="20" color={themes.colors.orange} />}
       initialRating={initialRating}
       readonly
     />

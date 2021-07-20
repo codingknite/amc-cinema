@@ -10,6 +10,7 @@ import BookMovie from 'routes/BookMovie';
 import Biography from 'routes/Biography';
 import Favorites from 'routes/Favorites';
 import NotFound from 'components/notFound';
+import SerieDetails from 'routes/SerieDetails';
 import MovieDetails from 'routes/MovieDetails';
 import DiscoverMovies from 'routes/DiscoverMovies';
 import DiscoverSeries from 'routes/DiscoverSeries';
@@ -36,14 +37,15 @@ const App = (): JSX.Element => {
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Homepage />} />
-        <Route path="/favorites" element={<Favorites />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="/my-bookings" element={<Bookings />} />
-        <Route path="movie/:movieId" element={<MovieDetails />} />
-        <Route path={'/booking/:movieId'} element={<BookMovie />} />
-        <Route path="/biography/:personId" element={<Biography />} />
         <Route path={'/movies'} element={<DiscoverMovies />} />
         <Route path={'/series'} element={<DiscoverSeries />} />
+        <Route path="movie/:movieId" element={<MovieDetails />} />
+        <Route path="serie/:serieId" element={<SerieDetails />} />
+        <Route path={'/booking/:movieId'} element={<BookMovie />} />
+        <Route path="/biography/:personId" element={<Biography />} />
       </Routes>
     </>
   );

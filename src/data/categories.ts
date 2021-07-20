@@ -74,21 +74,9 @@ export const genres: GenresInfo[] = [
     series: false,
   },
   {
-    id: 8087,
-    name: 'Horror',
-    movies: true,
-    series: true,
-  },
-  {
     id: 10402,
     name: 'Music',
     movies: true,
-    series: false,
-  },
-  {
-    id: 6027,
-    name: 'Music',
-    movies: false,
     series: true,
   },
   {
@@ -101,12 +89,6 @@ export const genres: GenresInfo[] = [
     id: 10749,
     name: 'Romance',
     movies: true,
-    series: false,
-  },
-  {
-    id: 9840,
-    name: 'Romance',
-    movies: false,
     series: true,
   },
   {
@@ -125,12 +107,6 @@ export const genres: GenresInfo[] = [
     id: 53,
     name: 'Thriller',
     movies: true,
-    series: false,
-  },
-  {
-    id: 9950,
-    name: 'Thriller',
-    movies: false,
     series: true,
   },
   {

@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import { useQuery } from 'react-query';
 import 'slick-carousel/slick/slick.css';
@@ -9,7 +9,7 @@ import * as Styles from './styles';
 import * as config from 'utils/config';
 import MovieCards from 'components/MovieCards/index';
 import { genres } from 'data/categories';
-import fetchData  from 'utils/fetchData';
+import fetchData from 'utils/fetchData';
 import { ContentLoader } from 'components/Loaders';
 import { useFavorite } from 'context/useFavorites';
 import handleError from 'utils/handleError';
@@ -34,7 +34,7 @@ const BrowseGenres = (): JSX.Element => {
 
   const initObject: InitialState = {
     type: 'movies',
-    name: 'science-fiction',
+    name: 'Science Fiction',
     id: 878,
     genresArray: movieGenres,
     selected: false,
@@ -64,11 +64,12 @@ const BrowseGenres = (): JSX.Element => {
   });
 
   const handleMoviesClick = () => {
+    scrollTo();
     setSelectedGenre(() => {
       return {
         ...selectedGenre,
         type: 'movies',
-        name: 'science-fiction',
+        name: 'Science-fiction',
         id: 878,
         genresArray: movieGenres,
       };
@@ -76,6 +77,7 @@ const BrowseGenres = (): JSX.Element => {
   };
 
   const handleSeriesClick = () => {
+    scrollTo();
     setSelectedGenre(() => {
       return {
         ...selectedGenre,
@@ -139,7 +141,9 @@ const BrowseGenres = (): JSX.Element => {
           ))}
         </Slider>
       </Styles.SliderWrapper>
-      <p>Showing results for: {selectedGenre.name}</p>
+      <Styles.ResultsPar>
+        Showing results for <span>{selectedGenre.name}</span>
+      </Styles.ResultsPar>
       {status === 'loading' ? (
         <ContentLoader />
       ) : (

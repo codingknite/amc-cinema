@@ -17,6 +17,7 @@ import { APIKey, baseUrl } from 'utils/config';
 import { useFavorite } from 'context/useFavorites';
 import { PaginationWrapper } from 'styles/discover';
 import { ContentLoader } from 'components/Loaders';
+import { ResultsPar } from 'components/LandingPage/BrowseGenres/styles';
 import {
   SliderWrapper,
   SliderButton,
@@ -44,8 +45,6 @@ interface PageProps {
 const Discover = ({ type }: Props): JSX.Element => {
   const { favorites, dispatchFavorites } = useFavorite();
   const [pageState, dispatch] = useReducer(paginateReducer, 1);
-
-  // consider using a custom hook for the slider to avoid unneccesary repetition - DRY
 
   const movieGenres =
     type === 'movies'
@@ -89,7 +88,9 @@ const Discover = ({ type }: Props): JSX.Element => {
     <>
       <NavBar />
       <SliderModal />
-      <p>Showing results for: {selectedGenre.name}</p>
+      <ResultsPar>
+        Showing results for <span>{selectedGenre.name}</span>
+      </ResultsPar>
     </>
   );
 
