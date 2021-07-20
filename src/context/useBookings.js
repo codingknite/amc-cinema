@@ -7,7 +7,8 @@ const BookingsContext = React.createContext(null);
 
 let initialBookings;
 try {
-  initialBookings = JSON.parse(localStorage.getItem('bookings')).reverse() ?? [];
+  initialBookings =
+    JSON.parse(localStorage.getItem('bookings')).reverse() ?? [];
 } catch (error) {
   initialBookings = [];
   console.error('Bookings could not be parsed');
@@ -21,12 +22,25 @@ try {
   console.error('Booked Info could not be parsed');
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const BookingsProvider = ({ children }) => {
-  const [bookedMovies, dispatchBooked] = useReducer(bookingsReducer, initialBookings);
-  const [bookedInfo, dispatchBookedInfo] = useReducer(bookingsInfo, intialBookedInfo);
+  const [bookedMovies, dispatchBooked] = useReducer(
+    bookingsReducer,
+    initialBookings
+  );
+  const [bookedInfo, dispatchBookedInfo] = useReducer(
+    bookingsInfo,
+    intialBookedInfo
+  );
 
-  useEffect(() => localStorage.setItem('bookedInfo', JSON.stringify(bookedInfo)), [bookedInfo]);
-  useEffect(() => localStorage.setItem('bookings', JSON.stringify(bookedMovies)), [bookedMovies]);
+  useEffect(
+    () => localStorage.setItem('bookedInfo', JSON.stringify(bookedInfo)),
+    [bookedInfo]
+  );
+  useEffect(
+    () => localStorage.setItem('bookings', JSON.stringify(bookedMovies)),
+    [bookedMovies]
+  );
 
   const contextValue = {
     bookedMovies,
@@ -41,11 +55,12 @@ export const BookingsProvider = ({ children }) => {
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const useBookings = () => {
   const context = useContext(BookingsContext);
   if (!context) {
     throw new Error(
-      'useBookings must be used within a BookingsProvider. Wrap a parent component in <BookingsProvider> to fix this error.',
+      'useBookings must be used within a BookingsProvider. Wrap a parent component in <BookingsProvider> to fix this error.'
     );
   }
   return context;
