@@ -49,7 +49,7 @@ export const Nav = styled.nav`
       background: #131418;
       height: 100vh;
       width: 100%;
-      margin-left: 500px;
+      margin-left: 1500px;
       flex-direction: column;
       transition: all 500ms ease-out;
       pointer-events: none;
