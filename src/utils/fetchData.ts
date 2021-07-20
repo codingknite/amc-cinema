@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-async function fetchData(url) {
+async function fetchData(url: string) {
   try {
     const response = await axios.get(url);
     const data = response.data;
