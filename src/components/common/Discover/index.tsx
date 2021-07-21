@@ -46,8 +46,6 @@ const Discover = ({ type }: Props): JSX.Element => {
   const { favorites, dispatchFavorites } = useFavorite();
   const [pageState, dispatch] = useReducer(paginateReducer, 1);
 
-  // consider using a custom hook for the slider to avoid unneccesary repetition - DRY
-
   const movieGenres =
     type === 'movies'
       ? genres.filter((genre) => genre.movies)
@@ -117,9 +115,6 @@ const Discover = ({ type }: Props): JSX.Element => {
         <ContentLoader />
       </>
     );
-
-  console.log(data);
-  console.log(selectedGenre.id);
 
   const { total_pages: pages }: PageProps = data;
 

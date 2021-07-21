@@ -36,8 +36,12 @@ export const MainLoader = (): JSX.Element => (
   </MainWrapper>
 );
 
-export const ContentLoader = (): JSX.Element => (
+export const ContentLoader = ({ size }: Props): JSX.Element => (
   <ContentWrapper>
-    <HollowDotsSpinner size={20} className="loader" />
+    <HollowDotsSpinner size={size ? size : 20} className="loader" />
   </ContentWrapper>
 );
+
+interface Props {
+  size?: number;
+}

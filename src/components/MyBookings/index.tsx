@@ -46,29 +46,30 @@ const MyBookings = (): JSX.Element => {
                   <p>{movie.overview}</p>
                 </Overview>
 
-                {bookedInfo.map((m: TicketTypes) => {
-                  return movie.id === m.id ? (
-                    <Styles.BookingInfo>
-                      <div className="ticket-info">
-                        <p>
-                          🪑{' '}
-                          {m.adults + m.kids + m.seniors > 1
-                            ? `${m.adults + m.kids + m.seniors} Seats`
-                            : `${m.adults + m.kids + m.seniors} Seat`}
+                {bookedInfo &&
+                  bookedInfo.map((m: TicketTypes) => {
+                    return movie.id === m.id ? (
+                      <Styles.BookingInfo>
+                        <div className="ticket-info">
+                          <p>
+                            🪑{' '}
+                            {m.adults + m.kids + m.seniors > 1
+                              ? `${m.adults + m.kids + m.seniors} Seats`
+                              : `${m.adults + m.kids + m.seniors} Seat`}
+                          </p>
+                          <p>🎥 {m.cinema}</p>
+                          <p>👓 {m.screen}</p>
+                        </div>
+                        <p className="date-info">
+                          Scheduled on
+                          <span>
+                            📆{' '}
+                            {Dayjs(reverseDate(m.date)).format('DD MMMM, YYYY')}
+                          </span>
                         </p>
-                        <p>🎥 {m.cinema}</p>
-                        <p>👓 {m.screen}</p>
-                      </div>
-                      <p className="date-info">
-                        Scheduled on
-                        <span>
-                          📆{' '}
-                          {Dayjs(reverseDate(m.date)).format('DD MMMM, YYYY')}
-                        </span>
-                      </p>
-                    </Styles.BookingInfo>
-                  ) : null;
-                })}
+                      </Styles.BookingInfo>
+                    ) : null;
+                  })}
                 <Styles.CancelButton
                   onClick={() => {
                     dispatchBooked({

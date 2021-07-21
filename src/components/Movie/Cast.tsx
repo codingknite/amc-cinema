@@ -17,15 +17,16 @@ const MovieCast = ({ cast }: Props): JSX.Element => {
 
   return (
     <Slider {...castSettings}>
-      {cast.map((cast) => (
-        <CastItem
-          key={cast.cast_id}
-          name={cast.name}
-          personId={cast.id}
-          castId={cast.cast_id}
-          profilePath={cast.profile_path}
-        />
-      ))}
+      {cast &&
+        cast.map((cast) => (
+          <CastItem
+            key={cast.cast_id}
+            name={cast.name}
+            personId={cast.id}
+            castId={cast.cast_id}
+            profilePath={cast.profile_path}
+          />
+        ))}
     </Slider>
   );
 };

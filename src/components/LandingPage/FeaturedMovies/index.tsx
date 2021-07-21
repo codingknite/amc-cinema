@@ -63,38 +63,39 @@ const FeaturedMovie = ({ moviesData }: Props): JSX.Element => {
 
   return (
     <Styles.MovieWrapper>
-      {mainHighlight.map((movie) => (
-        <Styles.MovieWrapper
-          key={movie.id}
-          posterPath={posterUrl + movie.backdrop_path}
-        >
-          <Styles.MovieStats>
-            <p className="stats">{movie.release_date.split('-')[0]}</p>
-            <p className="stats">{findGenre(movie.genre_ids[0])}</p>
-            <div className="rating">
-              <BsStarFill color={themes.colors.orange} />
-              <p>{movie.vote_average}</p>
-            </div>
-          </Styles.MovieStats>
-          <Styles.MovieInfo>
-            <p className="title">{movie.title}</p>
-            <p className="overview">
-              {movie.overview.split(' ').slice(0, 40).join(' ') + ' . . .'}
-            </p>
-            <div className="buttons">
-              <StyledLinkButton to={`/movie/${movie.id}`}>
-                <GiRead />
-                <p>Learn More</p>
-              </StyledLinkButton>
+      {mainHighlight &&
+        mainHighlight.map((movie) => (
+          <Styles.MovieWrapper
+            key={movie.id}
+            posterPath={posterUrl + movie.backdrop_path}
+          >
+            <Styles.MovieStats>
+              <p className="stats">{movie.release_date.split('-')[0]}</p>
+              <p className="stats">{findGenre(movie.genre_ids[0])}</p>
+              <div className="rating">
+                <BsStarFill color={themes.colors.orange} />
+                <p>{movie.vote_average}</p>
+              </div>
+            </Styles.MovieStats>
+            <Styles.MovieInfo>
+              <p className="title">{movie.title}</p>
+              <p className="overview">
+                {movie.overview.split(' ').slice(0, 50).join(' ') + ' . . .'}
+              </p>
+              <div className="buttons">
+                <StyledLinkButton to={`/movie/${movie.id}`}>
+                  <GiRead />
+                  <p>Learn More</p>
+                </StyledLinkButton>
 
-              <StyledLinkButton to={`/booking/${movie.id}`}>
-                <SiGooglecalendar />
-                <p>Book Movie</p>
-              </StyledLinkButton>
-            </div>
-          </Styles.MovieInfo>
-        </Styles.MovieWrapper>
-      ))}
+                <StyledLinkButton to={`/booking/${movie.id}`}>
+                  <SiGooglecalendar />
+                  <p>Book Movie</p>
+                </StyledLinkButton>
+              </div>
+            </Styles.MovieInfo>
+          </Styles.MovieWrapper>
+        ))}
       <NextHighlight moviePoster={moviePoster} movieTitle={movieTitle} />
     </Styles.MovieWrapper>
   );
