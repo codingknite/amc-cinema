@@ -147,21 +147,24 @@ export const castSettings = {
   nextArrow: <NextArrow />,
   responsive: [
     {
-      breakpoint: 600,
+      breakpoint: 480,
       settings: {
         slidesToShow: 6,
         slidesToScroll: 2,
         initialSlide: 2,
+        arrows: false,
       },
     },
     {
-      breakpoint: 320,
+      breakpoint: 390,
       settings: {
         slidesToShow: 4,
         slidesToScroll: 2,
         initialSlide: 2,
+        arrows: false,
       },
     },
+
   ],
 };
 

@@ -47,6 +47,7 @@ export interface MovieResults {
   runtime: number | null;
   homepage: string;
   imdb_id: string | null;
+  first_air_date: string;
 }
 
 export interface SerieResults {
@@ -56,7 +57,6 @@ export interface SerieResults {
   backdrop_path: string | null;
   vote_average: number;
   overview: string;
-  first_air_date: string;
   origin_country: Array<string>;
   genre_ids: Array<number>;
   original_language: string;
