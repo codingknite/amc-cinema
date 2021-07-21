@@ -15,12 +15,11 @@ export const Nav = styled.nav`
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
 
   @media (max-width: ${themes.breakpoints.sm}) {
-    height: 4rem;
-    background-color: #0a0908;
+    height: 5rem;
   }
 
   .nav-links {
-    width: 50%;
+    width: 60%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -44,10 +43,10 @@ export const Nav = styled.nav`
       justify-content: space-around;
     }
 
-    @media (max-width: ${themes.breakpoints.sm}) {
+    @media (max-width: ${themes.breakpoints.md}) {
       position: fixed;
-      background: #131418;
-      height: 100vh;
+      background: #000;
+      height: 85vh;
       width: 100%;
       margin-left: 1500px;
       flex-direction: column;
@@ -80,7 +79,9 @@ export const Logo = styled.img`
   margin-left: 5rem;
 
   @media (max-width: ${themes.breakpoints.md}) {
-    display: none;
+    width: 4rem;
+    height: 4rem;
+    margin-left: 1rem;
   }
 `;
 
@@ -96,7 +97,7 @@ export const Hamburger = styled.div`
     transition: all 0.3s ease;
   }
 
-  @media (max-width: ${themes.breakpoints.sm}) {
+  @media (max-width: ${themes.breakpoints.md}) {
     display: block;
     position: absolute;
     cursor: pointer;

@@ -13,7 +13,7 @@ export const Wrapper = styled.section`
     background: green;
   }
 
-  @media (max-width: ${themes.breakpoints.md}) {
+  @media (max-width: ${themes.breakpoints.lg}) {
     width: 100%;
   }
 `;
