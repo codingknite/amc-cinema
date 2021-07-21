@@ -16,13 +16,11 @@ export const MovieWrapper = styled.div<MovieWrapperProps>`
   position: relative;
 
   @media (max-width: ${themes.breakpoints.mdsm}) {
-    margin-top: 3rem;
     min-height: 35rem;
     background-position: center;
   }
 
   @media (max-width: ${themes.breakpoints.md}) {
-    margin-top: 3.4rem;
     min-height: 30rem;
   }
 `;
@@ -119,7 +117,7 @@ export const MovieInfo = styled.div`
     }
   }
 
-  @media (max-width: ${themes.breakpoints.xsm}) {
+  @media (max-width: ${themes.breakpoints.sm}) {
     margin: 0.5rem;
 
     .title {

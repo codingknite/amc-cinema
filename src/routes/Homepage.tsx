@@ -20,8 +20,8 @@ const Higlights = styled.div`
   align-items: center;
   margin-top: 6.5rem;
 
-  @media (max-width: ${themes.breakpoints.lg}) {
-    margin-top: 0rem;
+  @media (max-width: ${themes.breakpoints.sm}) {
+    margin-top: 5rem;
   }
 `;
 
