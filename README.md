@@ -1,3 +1,0 @@
-# AMC Cinema
-
-## Coming Soon 😉
