@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+git add import PropTypes from 'prop-types';
 import React, { useReducer, useEffect, useContext } from 'react';
 
 import { bookingsReducer, bookingsInfo } from 'reducers/bookingsReducer';
@@ -16,7 +16,7 @@ try {
 
 let intialBookedInfo;
 try {
-  intialBookedInfo = JSON.parse(localStorage.getItem('bookedInfo')) ?? [];
+  intialBookedInfo = JSON.parse(localStorage.getItem('bookedInfo')).reverse() ?? [];
 } catch (error) {
   intialBookedInfo = [];
   console.error('Booked Info could not be parsed');
