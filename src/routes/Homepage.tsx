@@ -2,7 +2,9 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import styled from 'styled-components';
 
+import Footer from 'components/Footer';
 import * as config from 'utils/config';
+import { themes } from 'styles/themes';
 import fetchData from 'utils/fetchData';
 import MetaData from 'components/MetaData';
 import handleError from 'utils/handleError';
@@ -17,6 +19,10 @@ const Higlights = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 6.5rem;
+
+  @media (max-width: ${themes.breakpoints.lg}) {
+    margin-top: 0rem;
+  }
 `;
 
 const Homepage = (): JSX.Element => {
@@ -80,6 +86,7 @@ const Homepage = (): JSX.Element => {
           )}
         <BrowseGenres />
       </main>
+      <Footer />
     </>
   );
 };
