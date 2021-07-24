@@ -8,15 +8,17 @@ interface Props {
 export const CardsWrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
+  width: 98.5%;
+  align-self: center;
 
-  @media (max-width: ${themes.breakpoints.lg}) {
+  @media (max-width: ${themes.breakpoints.xlg}) {
     justify-content: center;
   }
 `;
 
 export const MovieCard = styled.div`
-  margin: 1rem;
-  width: 250px;
+  width: 236px;
 
   &:hover {
     transition: ease-in-out 500ms;
@@ -38,7 +40,7 @@ export const PosterWrapper = styled.div`
 
 export const MoviePoster = styled.img<Props>`
   width: 100%;
-  height: 400px;
+  height: 370px;
   border-radius: 0.8rem;
   color: ${themes.colors.white};
   background: ${(props) =>

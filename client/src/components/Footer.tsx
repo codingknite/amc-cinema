@@ -40,7 +40,7 @@ const Footer = (): JSX.Element => {
         <p>
           Created with ❤ by{' '}
           <a
-            href="https://github.com/codingknite"
+            href="https://codingknite.com"
             rel="referrer noreferrer"
             target="_blank"
           >
@@ -48,9 +48,30 @@ const Footer = (): JSX.Element => {
           </a>
         </p>
         <div>
-          <ImGithub size={25} />
-          <ImLinkedin size={25} />
-          <ImTwitter size={25} />
+          <a
+            href="https://github.com/codingknite"
+            rel="referrer noreferrer"
+            target="_blank"
+            style={{ color: 'white' }}
+          >
+            <ImGithub size={25} />
+          </a>
+          <a
+            href="https://linkedin.com/in/joelmugalu"
+            rel="referrer noreferrer"
+            target="_blank"
+            style={{ color: 'white' }}
+          >
+            <ImLinkedin size={25} />
+          </a>
+          <a
+            href="https://twitter.com/codingknite"
+            rel="referrer noreferrer"
+            target="_blank"
+            style={{ color: 'white' }}
+          >
+            <ImTwitter size={25} />
+          </a>
         </div>
       </Disclaimer>
     </Wrapper>
@@ -58,14 +79,3 @@ const Footer = (): JSX.Element => {
 };
 
 export default Footer;
-
-{
-  /* <p>
-  Inspiration for this web app was taken from{' '}
-  <a href="https://amctheatres.com" rel="referrer noreferrer" target="_blank">
-    AMC Theatres
-  </a>{' '}
-  and was only made for learning purposes. It&apos;s in no way part of the AMC
-  Theatres franchise.
-</p>; */
-}
