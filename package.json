@@ -7,6 +7,7 @@
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.1.9",
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:package.json
 <<<<<<< HEAD
     "axios": "^0.21.1",
@@ -31,6 +32,11 @@
 >>>>>>> af2dee9 (update packages):client/package.json
 =======
 >>>>>>> a2b9ace (update config)
+=======
+    "axios": "^0.21.1",
+    "dayjs": "^1.10.4",
+    "history": "^5.0.0",
+>>>>>>> 0ba9f26 (reconstruct dependency tree)
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-datepicker": "^4.1.1",
@@ -51,6 +57,7 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:package.json
 <<<<<<< HEAD
 =======
@@ -62,6 +69,8 @@
 =======
     "ts-jest": "^27.0.4",
 >>>>>>> a2b9ace (update config)
+=======
+>>>>>>> 0ba9f26 (reconstruct dependency tree)
     "typescript": "^4.3.5",
     "web-vitals": "^1.0.1"
   },
@@ -120,6 +129,7 @@
     "@types/react-slick": "^0.23.5",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@types/styled-components": "^5.1.11",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
@@ -130,18 +140,22 @@
 =======
 >>>>>>> a2b9ace (update config)
     "@types/react-youtube": "^7.10.0",
+=======
+>>>>>>> 0ba9f26 (reconstruct dependency tree)
     "@types/styled-components": "^5.1.11",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
-    "cypress": "^8.2.0",
     "eslint": "^7.29.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.23.4",
+<<<<<<< HEAD
     "eslint-plugin-jest": "^24.3.6",
 <<<<<<< HEAD
 >>>>>>> 58dd943 (add project banner)
 =======
 >>>>>>> a2b9ace (update config)
+=======
+>>>>>>> 0ba9f26 (reconstruct dependency tree)
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0"
