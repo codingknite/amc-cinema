@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.1.9",
+<<<<<<< HEAD:package.json
 <<<<<<< HEAD
     "axios": "^0.21.1",
     "dayjs": "^1.10.4",
@@ -17,6 +18,13 @@
     "history": "^5.0.0",
     "jest": "^27.0.6",
 >>>>>>> 58dd943 (add project banner)
+=======
+    "@types/jest": "^26.0.24",
+    "axios": "^0.21.1",
+    "dayjs": "^1.10.4",
+    "history": "^5.0.0",
+    "jest": "^27.0.6",
+>>>>>>> af2dee9 (update packages):client/package.json
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-datepicker": "^4.1.1",
@@ -36,10 +44,14 @@
     "react-youtube": "^7.13.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.0",
+<<<<<<< HEAD:package.json
 <<<<<<< HEAD
 =======
     "ts-jest": "^27.0.4",
 >>>>>>> 58dd943 (add project banner)
+=======
+    "ts-jest": "^27.0.4",
+>>>>>>> af2dee9 (update packages):client/package.json
     "typescript": "^4.3.5",
     "web-vitals": "^1.0.1"
   },
@@ -48,14 +60,20 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
 <<<<<<< HEAD:package.json
+<<<<<<< HEAD:package.json
+=======
+>>>>>>> af2dee9 (update packages):client/package.json
     "lint": "eslint src",
     "test": "jest",
     "test:watch": "jest --watch",
     "cypress:open": "cypress open"
+<<<<<<< HEAD:package.json
 =======
     "test": "jest --watch",
     "lint": "eslint src"
 >>>>>>> 30f6738 (add jest & react-testing-lib):client/package.json
+=======
+>>>>>>> af2dee9 (update packages):client/package.json
   },
   "eslintConfig": {
     "extends": [
