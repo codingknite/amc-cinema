@@ -78,7 +78,7 @@ export const SliderWrapper = styled.div`
 
 export const ResultsPar = styled.p`
   font-size: 1rem;
-  margin: 2rem 0 0.5rem 3rem;
+  margin: 1rem 0 1.5rem 3rem;
 
   span {
     font-size: 1.5rem;

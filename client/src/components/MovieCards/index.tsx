@@ -12,7 +12,7 @@ import { MovieResults } from 'types/types';
 interface Props {
   data: MovieResults[];
   type?: string;
-  favorites?: [];
+  favorites?: Array<number>;
   dispatchFavorites?: () => void;
 }
 
@@ -68,15 +68,16 @@ const MovieCards = ({
                 <Rating initialRating={Math.round(movie.vote_average / 2)} />
               </Styles.MovieRating>
               <Styles.LikeMovie>
-                {type === 'movies' && favorites && dispatchFavorites ? (
-                  <LikeFavorite
-                    favorites={favorites}
-                    dispatchFavorites={dispatchFavorites}
-                    movieId={movie.id}
-                  />
-                ) : type === 'series' ? (
-                  movie.first_air_date.split('-')[0]
-                ) : null}
+                {type === 'series'
+                  ? movie.first_air_date.split('-')[0]
+                  : favorites &&
+                    dispatchFavorites && (
+                    <LikeFavorite
+                      favorites={favorites}
+                      dispatchFavorites={dispatchFavorites}
+                      movieId={movie.id}
+                    />
+                  )}
               </Styles.LikeMovie>
             </Styles.MovieInfo>
           </Styles.MovieCard>

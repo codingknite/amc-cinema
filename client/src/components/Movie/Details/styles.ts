@@ -176,6 +176,7 @@ export const WebLinks = styled.a`
   background-color: ${themes.colors.heartRed};
   width: 9rem;
   text-align: center;
+  margin-right: 1rem;
 
   @media (max-width: ${themes.breakpoints.sm}) {
     margin: 0 0.5rem 1rem 0;

@@ -42,7 +42,10 @@ export const bookingsReducer = (
   }
 };
 
-export const bookingsInfo = (bookedInfo: BookedInfo[], action: BookedAction): BookedInfo[] => {
+export const bookingsInfo = (
+  bookedInfo: BookedInfo[],
+  action: BookedAction
+): BookedInfo[] => {
   switch (action.type) {
   case 'ADD_BOOKEDINFO':
     // eslint-disable-next-line no-case-declarations
