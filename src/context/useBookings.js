@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+git add import PropTypes from 'prop-types';
 import React, { useReducer, useEffect, useContext } from 'react';
 
 import { bookingsReducer, bookingsInfo } from 'reducers/bookingsReducer';

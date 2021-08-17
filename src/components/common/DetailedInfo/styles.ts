@@ -169,6 +169,7 @@ export const Links = styled.div`
 `;
 
 export const WebLinks = styled.a`
+<<<<<<< HEAD
   width: 9rem;
   padding: 0.8rem;
   border-radius: 2rem;
@@ -176,6 +177,15 @@ export const WebLinks = styled.a`
   text-decoration: none;
   color: ${themes.colors.white};
   background-color: ${themes.colors.heartRed};
+=======
+  padding: 0.8rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  color: ${themes.colors.white};
+  background-color: ${themes.colors.heartRed};
+  width: 9rem;
+  text-align: center;
+>>>>>>> d09ab8c (create details component)
 
   @media (max-width: ${themes.breakpoints.sm}) {
     margin: 0 0.5rem 1rem 0;
