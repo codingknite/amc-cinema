@@ -14,6 +14,7 @@
 >>>>>>> 6cbfdff (update README)
 
 [AMC Cinema](https://amc-cinema.verce.app) is movie library and ticket booking application built in React.
+<<<<<<< HEAD
 
 ## How I worked on this project
 
@@ -141,3 +142,5 @@ Feel free to add any contributions to the app.
 
 [AMC Cinema](https://amc-cinema.verce.app) is movie library and ticket booking application built in React.
 >>>>>>> 58dd943 (add project banner)
+=======
+>>>>>>> d32fd9e (update README)
