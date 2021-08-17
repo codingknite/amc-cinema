@@ -21,14 +21,6 @@ export const MovieWrapper = styled.div<MovieWrapperProps>`
   }
 
   @media (max-width: ${themes.breakpoints.md}) {
-    min-height: 30rem;
-  }
-`;
-
-export const MovieStats = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 3rem;
 
   .stats {
     margin-left: 2rem;
@@ -117,7 +109,11 @@ export const MovieInfo = styled.div`
     }
   }
 
+<<<<<<< HEAD
   @media (max-width: ${themes.breakpoints.sm}) {
+=======
+  @media (max-width: ${themes.breakpoints.xsm}) {
+>>>>>>> 1fd3d65 (styling improvements)
     margin: 0.5rem;
 
     .title {
