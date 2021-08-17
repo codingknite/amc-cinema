@@ -3,6 +3,7 @@
 ![amcbanner](/src/assets/amcbanner.png)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 [AMC Cinema](https://amc-cinema.verce.app) is movie library and ticket booking application built in React.
 =======
@@ -144,3 +145,7 @@ Feel free to add any contributions to the app.
 >>>>>>> 58dd943 (add project banner)
 =======
 >>>>>>> d32fd9e (update README)
+=======
+
+[AMC Cinema](https://amc-cinema.verce.app) is movie library and ticket booking application built in React.
+>>>>>>> d7ea6f6e37cd3f5ff2264ea803e53a26791d4084

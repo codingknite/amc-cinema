@@ -78,16 +78,20 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:package.json
 <<<<<<< HEAD:package.json
 =======
 >>>>>>> af2dee9 (update packages):client/package.json
 =======
 >>>>>>> a2b9ace (update config)
+=======
+>>>>>>> d7ea6f6e37cd3f5ff2264ea803e53a26791d4084
     "lint": "eslint src",
     "test": "jest",
     "test:watch": "jest --watch",
     "cypress:open": "cypress open"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD:package.json
 =======
@@ -98,6 +102,8 @@
 >>>>>>> af2dee9 (update packages):client/package.json
 =======
 >>>>>>> a2b9ace (update config)
+=======
+>>>>>>> d7ea6f6e37cd3f5ff2264ea803e53a26791d4084
   },
   "eslintConfig": {
     "extends": [
@@ -129,6 +135,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@types/styled-components": "^5.1.11",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
@@ -141,12 +148,15 @@
     "@types/react-youtube": "^7.10.0",
 =======
 >>>>>>> 0ba9f26 (reconstruct dependency tree)
+=======
+>>>>>>> d7ea6f6e37cd3f5ff2264ea803e53a26791d4084
     "@types/styled-components": "^5.1.11",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
     "eslint": "^7.29.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.23.4",
+<<<<<<< HEAD
 <<<<<<< HEAD
     "eslint-plugin-jest": "^24.3.6",
 <<<<<<< HEAD
@@ -155,6 +165,8 @@
 >>>>>>> a2b9ace (update config)
 =======
 >>>>>>> 0ba9f26 (reconstruct dependency tree)
+=======
+>>>>>>> d7ea6f6e37cd3f5ff2264ea803e53a26791d4084
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0"

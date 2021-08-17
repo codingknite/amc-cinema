@@ -171,8 +171,11 @@ export const Links = styled.div`
 export const WebLinks = styled.a`
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 7a5d32b (final commit)
+=======
+>>>>>>> d7ea6f6e37cd3f5ff2264ea803e53a26791d4084
   width: 9rem;
   padding: 0.8rem;
   border-radius: 2rem;
@@ -180,6 +183,7 @@ export const WebLinks = styled.a`
   text-decoration: none;
   color: ${themes.colors.white};
   background-color: ${themes.colors.heartRed};
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   padding: 0.8rem;
@@ -192,6 +196,8 @@ export const WebLinks = styled.a`
 >>>>>>> d09ab8c (create details component)
 =======
 >>>>>>> 7a5d32b (final commit)
+=======
+>>>>>>> d7ea6f6e37cd3f5ff2264ea803e53a26791d4084
 
   @media (max-width: ${themes.breakpoints.sm}) {
     margin: 0 0.5rem 1rem 0;

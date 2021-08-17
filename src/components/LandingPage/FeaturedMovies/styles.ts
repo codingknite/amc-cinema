@@ -23,9 +23,12 @@ export const MovieWrapper = styled.div<MovieWrapperProps>`
   @media (max-width: ${themes.breakpoints.md}) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 7a5d32b (final commit)
+=======
+>>>>>>> d7ea6f6e37cd3f5ff2264ea803e53a26791d4084
     min-height: 30rem;
   }
 `;
