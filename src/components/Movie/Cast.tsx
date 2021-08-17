@@ -16,11 +16,7 @@ const Wrapper = styled.div`
 `;
 const MovieCast = ({ cast }: Props): JSX.Element => {
   return (
-<<<<<<< HEAD
     <Wrapper>
-=======
-    <Slider {...castSettings}>
->>>>>>> 99745fa (minor updates)
       {cast &&
         cast.map((cast) => (
           <CastItem
@@ -31,11 +27,7 @@ const MovieCast = ({ cast }: Props): JSX.Element => {
             profilePath={cast.profile_path}
           />
         ))}
-<<<<<<< HEAD
     </Wrapper>
-=======
-    </Slider>
->>>>>>> 99745fa (minor updates)
   );
 };
 

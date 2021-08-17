@@ -21,6 +21,17 @@ export const MovieWrapper = styled.div<MovieWrapperProps>`
   }
 
   @media (max-width: ${themes.breakpoints.md}) {
+<<<<<<< HEAD
+=======
+    min-height: 30rem;
+  }
+`;
+
+export const MovieStats = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+>>>>>>> 1ce33ea (fix height issue on featured component)
 
   .stats {
     margin-left: 2rem;
