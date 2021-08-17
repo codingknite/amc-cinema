@@ -1,6 +1,7 @@
 # AMC Cinema
 
 ![amcbanner](/src/assets/amcbanner.png)
+<<<<<<< HEAD
 
 [AMC Cinema](https://amc-cinema.verce.app) is movie library and ticket booking application built in React.
 =======
@@ -88,3 +89,7 @@ You will also need to generate an API key from TMDB which is assigned to `REACT_
 
 Feel free to add any contributions to the app.
 >>>>>>> 140db7f (create README)
+=======
+
+[AMC Cinema](https://amc-cinema.verce.app) is movie library and ticket booking application built in React.
+>>>>>>> 58dd943 (add project banner)
