@@ -7,9 +7,12 @@ interface Props {
 export const NextHighlightWrapper = styled.div<Props>`
   position: absolute;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   height: 16rem;
 >>>>>>> 1fd3d65 (styling improvements)
+=======
+>>>>>>> 7a5d32b (final commit)
   width: 28rem;
   height: 16rem;
   bottom: 0;
@@ -20,14 +23,20 @@ export const NextHighlightWrapper = styled.div<Props>`
   transition: background ease-in 500ms;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7a5d32b (final commit)
   @media (min-width: ${themes.breakpoints.md}) and (max-width: ${themes
   .breakpoints.lg}) {
     width: 30vw;
     height: 18vh;
   }
 
+<<<<<<< HEAD
 =======
 >>>>>>> 1fd3d65 (styling improvements)
+=======
+>>>>>>> 7a5d32b (final commit)
   @media (max-width: ${themes.breakpoints.md}) {
     display: none;
   }
@@ -43,14 +52,20 @@ export const NextHighlightWrapper = styled.div<Props>`
     overflow: hidden;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7a5d32b (final commit)
     @media (min-width: ${themes.breakpoints.md}) and (max-width: ${themes
   .breakpoints.lg}) {
     top: 35%;
     height: auto;
     }
 
+<<<<<<< HEAD
 =======
 >>>>>>> 1fd3d65 (styling improvements)
+=======
+>>>>>>> 7a5d32b (final commit)
     .movie-title {
       font-size: 1.2rem;
       font-weight: bold;
