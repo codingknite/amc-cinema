@@ -15016,6 +15016,7 @@ react-slick@^0.28.1:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 react-youtube@^7.13.1:
 =======
 react-youtube@*, react-youtube@^7.13.1:
@@ -15036,6 +15037,8 @@ react-youtube@^7.13.1:
 
 =======
 >>>>>>> d7ea6f6 (reconstruct dependency tree)
+=======
+>>>>>>> bc47f01 (reconstruct dependency tree)
 react@>=0.14.x, react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
