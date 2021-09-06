@@ -9,7 +9,6 @@
     "axios": "^0.21.1",
     "dayjs": "^1.10.4",
     "history": "^5.0.0",
-    "npm": "^7.21.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-datepicker": "^4.1.1",
