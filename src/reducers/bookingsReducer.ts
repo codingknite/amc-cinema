@@ -1,33 +1,13 @@
-interface Action {
-  type: string;
-  movieId: number;
-}
-
-interface BookedAction {
-  type: string;
-  movieId: number;
-  adults: number;
-  kids: number;
-  seniors: number;
-  date: string;
-  cinema: string;
-  screen: string;
-}
-
-interface BookedInfo {
-  id: number;
-  adults: number;
-  kids: number;
-  seniors: number;
-  date: string;
-  cinema: string;
-  screen: string;
-}
+import {
+  BookedActionProps,
+  BookingsProps,
+  BookingsActionProps,
+} from 'types/types';
 
 export const bookingsReducer = (
-  bookedMovies: Array<number>,
-  action: Action
-): Array<number> => {
+  bookedMovies: number[],
+  action: BookedActionProps
+): number[] => {
   switch (action.type) {
   case 'ADD_BOOKED':
     if (bookedMovies.includes(action.movieId)) {
@@ -38,14 +18,14 @@ export const bookingsReducer = (
   case 'REMOVE_BOOKED':
     return bookedMovies.filter((movie) => movie !== action.movieId);
   default:
-    throw new Error(`Unhandled action ${action.type}`);
+    return bookedMovies;
   }
 };
 
 export const bookingsInfo = (
-  bookedInfo: BookedInfo[],
-  action: BookedAction
-): BookedInfo[] => {
+  bookedInfo: BookingsProps[],
+  action: BookingsActionProps
+): BookingsProps[] => {
   switch (action.type) {
   case 'ADD_BOOKEDINFO':
     // eslint-disable-next-line no-case-declarations
@@ -65,9 +45,19 @@ export const bookingsInfo = (
         screen: action.screen,
       },
     ];
+  default:
+    return bookedInfo;
+  }
+};
+
+export const deleteBooking = (
+  bookedInfo: BookingsProps[],
+  action: BookedActionProps
+): BookingsProps[] => {
+  switch (action.type) {
   case 'REMOVE_BOOKEDINFO':
     return bookedInfo.filter((movie) => movie.id !== action.movieId);
   default:
-    throw new Error(`Unhandled action ${action.type}`);
+    return bookedInfo;
   }
 };

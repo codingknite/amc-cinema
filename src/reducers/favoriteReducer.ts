@@ -3,7 +3,7 @@ interface Action {
   payload: number
 }
 
-const favoritesReducer = (favorites: Array<number>, action: Action): Array<number> => {
+const favoritesReducer = (favorites: number[], action: Action): number[] => {
   switch (action.type) {
   case 'favorite':
     if (favorites.includes(action.payload)) {
