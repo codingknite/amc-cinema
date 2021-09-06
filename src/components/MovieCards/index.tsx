@@ -13,7 +13,12 @@ interface Props {
   data: MovieResults[];
   type?: string;
   favorites?: Array<number>;
-  dispatchFavorites?: () => void;
+  dispatchFavorites?: React.Dispatch<FavProps>;
+}
+
+interface FavProps {
+  type: string;
+  payload: number;
 }
 
 const MovieCards = ({

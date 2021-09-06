@@ -16,7 +16,7 @@ import {
 import { TicketTypes } from 'types/types';
 
 const MyBookings = (): JSX.Element => {
-  const { bookedMovies, dispatchBooked, bookedInfo, dispatchBookedInfo } =
+  const { bookedMovies, dispatchBooked, bookedInfo, dispatchdeleteBooked } =
     useBookings();
   const { data, error, loading } = useFetchAll(bookedMovies);
 
@@ -76,7 +76,7 @@ const MyBookings = (): JSX.Element => {
                       type: 'REMOVE_BOOKED',
                       movieId: movie.id,
                     });
-                    dispatchBookedInfo({
+                    dispatchdeleteBooked({
                       type: 'REMOVE_BOOKEDINFO',
                       movieId: movie.id,
                     });
