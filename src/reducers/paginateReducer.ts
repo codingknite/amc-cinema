@@ -14,7 +14,7 @@ const paginationReducer = (pageState: number, action: Action): number => {
     return prevState;
   }
   default:
-    throw new Error(`Unhandled action ${action.type}`);
+    throw pageState;
   }
 };
 

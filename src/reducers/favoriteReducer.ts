@@ -10,11 +10,11 @@ const favoritesReducer = (favorites: number[], action: Action): number[] => {
       const filteredFavorites = favorites.filter(
         (movie) => movie !== action.payload
       );
-      return [...filteredFavorites];
+      return [...filteredFavorites].reverse();
     }
-    return [...favorites, action.payload];
+    return [...favorites, action.payload].reverse();
   default:
-    throw new Error(`Unhandled action ${action.type}`);
+    return favorites;
   }
 };
 
