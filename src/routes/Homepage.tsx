@@ -65,6 +65,10 @@ const Homepage = (): JSX.Element => {
   handleError(nowPlayingStatus, nowPlayingError);
   handleError(upcomingStatus, upcomingError);
 
+  console.log('DATA', featuredMovies);
+  console.log('DATA', nowPlaying);
+  console.log('DATA', upcoming);
+
   return (
     <>
       <MetaData title="AMC Cinema - Home" />
