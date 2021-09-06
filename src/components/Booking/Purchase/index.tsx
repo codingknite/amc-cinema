@@ -15,7 +15,7 @@ import handleError from 'utils/handleError';
 interface Props {
   movieId: string;
   cinema: string;
-  startDate: string | null;
+  startDate: string;
   startTime: string;
   adults: number;
   kids: number;
