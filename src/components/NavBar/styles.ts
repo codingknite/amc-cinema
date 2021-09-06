@@ -122,4 +122,5 @@ export const StyledNavLink = styled(NavLink)<NavLinkProps>`
 
 interface NavLinkProps {
   flexDisplay?: string;
+  activeClassName: string;
 }
