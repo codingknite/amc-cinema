@@ -75,3 +75,28 @@ export interface AmcApiResponse {
 export interface TmdbSerieApiResponse {
   results: SerieResults[];
 }
+
+export interface BookedActionProps {
+  type: string;
+  movieId: number;
+}
+export interface BookingsProps {
+  id: number;
+  date: string;
+  kids: number;
+  adults: number;
+  cinema: string;
+  screen: string;
+  seniors: number;
+}
+
+export interface BookingsActionProps {
+  type: string;
+  date: string;
+  kids: number;
+  screen: string;
+  cinema: string;
+  adults: number;
+  seniors: number;
+  movieId: number;
+}
