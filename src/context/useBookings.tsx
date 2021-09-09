@@ -19,21 +19,22 @@ interface ContextValues {
   deleteBooked: BookingsProps[];
   dispatchdeleteBooked: React.Dispatch<BookedActionProps>;
 }
+
 const BookingsContext = createContext<ContextValues | undefined>(undefined);
 
-let initialBookings: number[];
+let initialBookings: number[] = [];
 try {
   initialBookings =
-    JSON.parse(localStorage.getItem('bookings') || '').reverse() ?? [];
+    JSON.parse(localStorage.getItem('bookings') || '[]');
 } catch (error) {
   initialBookings = [];
   console.error('Bookings could not be parsed');
 }
 
-let intialBookedInfo: BookingsProps[];
+let intialBookedInfo: BookingsProps[] = [];
 try {
   intialBookedInfo =
-    JSON.parse(localStorage.getItem('bookedInfo') || '{}').reverse() ?? [];
+    JSON.parse(localStorage.getItem('bookedInfo') || '[]');
 } catch (error) {
   intialBookedInfo = [];
   console.error('Booked Info could not be parsed');
