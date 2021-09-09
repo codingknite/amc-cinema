@@ -13,11 +13,10 @@ interface Action {
 
 const FavoriteContext = createContext<ContextValues | undefined>(undefined);
 
-let initialFavorites: number[];
+let initialFavorites: number[] = [];
 try {
   initialFavorites =
-    JSON.parse(localStorage.getItem('favorite') || '') ?? [];
-  console.log('YOLO', initialFavorites);
+    JSON.parse(localStorage.getItem('favorite') || '[]');
 } catch {
   initialFavorites = [];
   console.error('Favorites could not be parsed');

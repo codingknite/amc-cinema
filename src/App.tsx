@@ -2,18 +2,18 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
-import Search from 'routes/Search';
-import Bookings from 'routes/Bookings';
-import Homepage from 'routes/Homepage';
+import Search from 'pages/Search';
+import Bookings from 'pages/Bookings';
+import Homepage from 'pages/Homepage';
 import { themes } from 'styles/themes';
-import BookMovie from 'routes/BookMovie';
-import Biography from 'routes/Biography';
-import Favorites from 'routes/Favorites';
+import BookMovie from 'pages/BookMovie';
+import Biography from 'pages/Biography';
+import Favorites from 'pages/Favorites';
 import NotFound from 'components/notFound';
-import SerieDetails from 'routes/SerieDetails';
-import MovieDetails from 'routes/MovieDetails';
-import DiscoverMovies from 'routes/DiscoverMovies';
-import DiscoverSeries from 'routes/DiscoverSeries';
+import SerieDetails from 'pages/SerieDetails';
+import MovieDetails from 'pages/MovieDetails';
+import DiscoverMovies from 'pages/DiscoverMovies';
+import DiscoverSeries from 'pages/DiscoverSeries';
 
 const GlobalStyles = createGlobalStyle`
   * {
