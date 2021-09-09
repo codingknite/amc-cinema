@@ -11,7 +11,7 @@ interface Props {
   dispatchFavorites: (args: DispatchArguments) => void;
   movieId: number;
 }
-const LikeFavorites = ({
+const LikeFavorite = ({
   favorites,
   dispatchFavorites,
   movieId,
@@ -47,4 +47,4 @@ const LikeFavorites = ({
   );
 };
 
-export default LikeFavorites;
+export default LikeFavorite;

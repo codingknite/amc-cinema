@@ -24,7 +24,7 @@ const BookingsContext = createContext<ContextValues | undefined>(undefined);
 let initialBookings: number[];
 try {
   initialBookings =
-    JSON.parse(localStorage.getItem('bookings') || '{}').reverse() ?? [];
+    JSON.parse(localStorage.getItem('bookings') || '').reverse() ?? [];
 } catch (error) {
   initialBookings = [];
   console.error('Bookings could not be parsed');
